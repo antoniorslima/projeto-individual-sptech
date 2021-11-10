@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Cadastro</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    <link rel="icon" href="./assets/imgs/logo verde.svg">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+
+    <body class="signup-js">
+        <!-- primeiro passo: esturuturar o html -->
+            <ul class="navbar">
+                <img src="./assets/imgs/logo branco.svg" class="logo">
+                <li><a href="./index.html"> Home </a></li>
+                <li class="selecionado"> Cadastro e Login </li>
+                <li><a href="./agradecimentos.html"> Agradecimentos </a></li>
+            </ul>
+        <div class="container">
+                <div class="content first-content">
+                    <div class="first-column"> <!--login-->
+                        <h2 class="title title-primary">Novo por aqui?</h2>
+                            <p class="description description-primary">Insira os seus dados pessoais ao lado e</p>
+                            <p class="description description-primary">comece sua jornada com a gente</p>
+                            <p class="description description-primary text-cad-log">Já fez o cadastro? Clique abaixo e faça login </p>
+                            <button class="btn btn-primary" onclick="entrar1()">Entrar</button>
+                    </div>
+                    <div class="second-column"> <!--cadastro-->
+                        <h2 class="title title-second">Criar conta</h2>
+                        <p class="description description-second">Utilize o seu email para se registrar</p>
+                        <form class="form" id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                            <input name="nome" type="text" placeholder="nome">
+                            <input name="email" type="text" placeholder="e-mail">
+                            <input name="senha" type="password" placeholder="senha">
+                            <input name="confirmacao-senha" type="password" placeholder="confirme a senha">
+                            <button class="btn btn-second">Cadastrar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content second-content">
+                        <div class="first-column"> <!--cadastro-->
+                            <h2 class="title title-primary">Bem-vindo de volta!</h2>
+                        <p class="description description-primary">Para se conectar com a gente,</p>
+                        <p class="description description-primary">por favor faça login ao lado com suas informações cadastradas</p>
+                        <p class="description description-primary text-cad-log">Não é cadastrado? Faça sua conta clicando abaixo</p>
+                        <button class="btn btn-primary" onclick="cadastrar1()">Cadastrar</button>
+                        </div>
+                        <div class="second-column"> <!--login-->
+                            <h2 class="title title-second">Login</h2>
+                            <p class="description description-second">Use sua conta de email e senha</p>
+                            <form class="form" id="form_login" method="post" onsubmit="return entrar()">
+                                <input name="email" type="text" placeholder="e-mail">
+                                <input name="senha" type="password" placeholder="senha">
+                                <br>
+                                <button class="btn btn-second" type="submit">
+                                    Entrar
+                                </button>
+                            </form>
+                        </div>
+            </div>
+        </div>
+
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login">
+
+                </div>
+            </div>
+        </div>
+   
+
+    <!--footer inicio-->
+    <div class="footer">
+        <h2>@antonioronij</h2>
+        <h2>todos os direitos reservados</h2>
+        <div class="social-media">
+            <img src="./assets/imgs/instagram.svg" alt="">
+            <img src="./assets/imgs/facebook.svg" alt="">
+            <img src="./assets/imgs/twitter.svg" alt="">
+            <img src="./assets/imgs/linkedin.svg" alt="">
+        </div>
+        <h2>2021</h2>
+    </div>
+
+    <!-- modal?
+
+    <div id="div_modal" class="div-modal">
+        <div id="modal_backdrop" onclick="fecharModal()" class="modal-backdrop">
+        </div>
+        <div id="modal_container" class="modal-container">
+            <button onclick="fecharModal()">fechar modal</button>
+        </div>
+    </div> -->
+
+
+
+</body>
+
+</html>
+
+<script>
+var body = document.querySelector('body');
+    function entrar1() {
+        body.className= 'signin-js';
+    }
+    function cadastrar1() {
+        body.className= 'signup-js';
+    }
+
+    function limparFormulario() {
+        document.getElementById("form_login").reset();
+    }
+
+    function entrar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_login")));
+
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (email == "" || senha == "") {
+            window.alert("Preencha todos os campos para prosseguir!");
+            finalizarAguardar();
+            return false;
+        }
+
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function limparFormulario() {
+        document.getElementById("form_cadastro").reset();
+    }
+
+    function cadastrar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+        var nome = formulario.get("nome");
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+        var confirmacaoSenha = formulario.get("confirmacao-senha");
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
+
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (nome == "") {
+                console.log('nome está em branco')
+            }
+            if (email == "") {
+                console.log('email está em branco')
+            }
+            if (senha == "") {
+                console.log('senha está em branco')
+            }
+            if (confirmacaoSenha == "") {
+                console.log('confirmacaoSenha está em branco')
+            }
+            finalizarAguardar();
+            return false;
+        }
+
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            finalizarAguardar();
+            return false;
+        }
+
+        if (senha != confirmacaoSenha) {
+            window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+            finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "login.html";
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+</script>
