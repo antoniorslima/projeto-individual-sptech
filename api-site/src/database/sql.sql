@@ -28,9 +28,9 @@ CREATE TABLE medida (
 
 
 /* para workbench - local - desenvolvimento */
-CREATE DATABASE acquatec;
+CREATE DATABASE ayuda;
 
-USE acquatec;
+USE ayuda;
 
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -39,13 +39,14 @@ CREATE TABLE usuario (
 	senha VARCHAR(50)
 );
 
-CREATE TABLE aviso (
+CREATE TABLE comentario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
+	nota INT,
     descricao VARCHAR(150),
 	fk_usuario INT,
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 ); 
+select * from comentario;
 
 CREATE TABLE medida (
 	id INT PRIMARY KEY AUTO_INCREMENT,

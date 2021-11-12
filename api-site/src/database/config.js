@@ -21,7 +21,7 @@ var sqlServerConfig = {
 var mySqlConfig = {
     host: "localhost",
     user: "root",
-    database: "acquatec",
+    database: "ayuda",
     password: "bandtec",
 };
 
@@ -66,6 +66,6 @@ function executar(instrucao) {
     }
 }
 
-module.exports = {
+module.exports = { 
     executar
 }
