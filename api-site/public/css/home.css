@@ -19,6 +19,7 @@
     justify-content: space-evenly;
     list-style: none;
     background-color: #7ed957;
+    /* box-shadow: 5px 2px 10px #7ed957; */
 }
 
 .navbar a {
@@ -60,6 +61,7 @@
     background-image: url(../assets/images/Spain_Madrid.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+
 }
 
 .banner img {
@@ -80,7 +82,7 @@
     border-top: solid white 10px;
     background-color: #7ed957;
     color: white;
-    height: 500px;
+    height: 100vh;
     align-self: center;
     justify-self: center;
     text-align: center;
