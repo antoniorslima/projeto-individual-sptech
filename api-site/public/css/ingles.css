@@ -89,17 +89,18 @@ body {
 }
 
 .language {
-    width: 200px;
+    width: 250px;
     padding: 10px 25px;
     margin: 20px 30px;
     background-color: white;
     border-radius: 15px;
-    height: 250px;
+    height: 220px;
 }
 
 .language img {
-    width: 200px;
+    width: 250px;
     height: 200px;
+    border-radius: 15px;
 }
 .language h2 {
     background-color: white;
@@ -115,28 +116,49 @@ body {
 .language:hover {
     width: 300px;
     height: 250px;
+    background-color: #7ed957;
+    border: solid white 2px;
+    transition: 0.5s;
+}
+
+.language h2:hover {
+    background-color: #7ed957;
+    border: 2px solid white;
+    color: white;
+}
+
+.language img:hover {
+    width: 300px;
+    height: 250px;
+    transition: 1s;
 }
 
 .busca {
     background-color: white;
     color: #7ed957;
     font-weight: bold;
-    margin-left: 30px;
+    margin-left: 350px;
+    padding-bottom: 10px;
     padding-left: 10px;
-    padding-bottom: 40px;
-    width: 500px;
+    padding-top: 10px;
+    width: 700px;
     height: 50px;
     border-radius: 15px;
     align-items: center;
+    display: flex;
 }
 
 .busca img {
     height: 50px;
     width: 50px;
+    margin-left: -55px;
+    cursor: pointer;
+
 }
 
 input {
     height: 45px;
+    width: 480px;
     border: none;
     background-color: #d4ffc2;
     margin: 8px;
@@ -150,6 +172,28 @@ input:focus {
     outline: 0;
 }
 
+.sugestao {
+    margin-top: 30px;
+}
+
+.sugestao button {
+    border-radius: 15px;
+    font-size: 15px;
+    padding: 10px 38px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    margin-top: 20px;
+    background-color: white;
+    border: 2px solid white;
+    color: #7ed957;
+
+}
+.sugestao button:hover {
+    background-color: transparent;
+    color: white;
+}
 
  a {
     text-decoration: none;

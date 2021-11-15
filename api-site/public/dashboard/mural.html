@@ -2,14 +2,13 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/imgs/logo verde.svg" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcquaTec | Avisos</title>
+    <title>Modern FamilyAcquaTec | Avisos</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="./dashboards.css">
+    <link rel="stylesheet" href="../css/modern-family.css">
     <script src="../js/funcoes.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,47 +17,36 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
+<body>
     <!-- <body onload="validarSessao()"> -->
+        <ul class="navbar">
+            <img src="../assets/imgs/logo branco.svg" class="logo">
+            <div class="titulo">
+            <img src="../assets/imgs/ingles.svg" alt="">
+                <h2>Inglês</h2>
+            </div>
+            <li><a href="./primeira-tela.html"> Voltar </a></li>
+            <li><a href="./index.html"> Sair </a></li>
+        </ul>
 
     <div class="janela">
 
 
-        <div class="header-left">
-
-            <h1>AcquaTec</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="cards.html">
-                    <h3>Aquários</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
-                <h3>Comentários</h3>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
+   
+            <!-- <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
-            </div>
+            </div> -->
 
+        <div class="serie">
+                <div class="language">
+                        <img src="../assets/imgs/modern-family.jpg" alt="">
+                        <h2>Modern Family</h2>
+                </div>
         </div>
 
-        <div class="dash-right">
-
-            <div class="avisos">
+            <div class="comentarios">
                 <div class="container"> 
-                    <h1>Publicar um aviso</h1>
+                    <h1>Publicar uma avaliação</h1>
                     <div class="div-form">
                         <form id="form_postagem" method="post" onsubmit="return publicar()">
                             <label>
@@ -76,8 +64,8 @@
                             <button>Enviar</button>
                         </form>
                     </div>
-                    <h1>Comentários</h1>
                     <div class="div-results">
+                        <h1>Confira o que outras pessoas acharam</h1>
                         <div id="feed_container" class="feed-container">
                         </div>
                     </div>
@@ -101,7 +89,6 @@
                 <img src="./assets/aguarde-pink3.gif" id="img_aguarde">
             </div>  -->
 
-        </div>
     </div>
 
 
