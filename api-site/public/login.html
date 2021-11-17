@@ -40,10 +40,10 @@
                         <h2 class="title title-second">Criar conta</h2>
                         <p class="description description-second">Utilize o seu email para se registrar</p>
                         <form class="form" id="form_cadastro" method="post" onsubmit="return cadastrar()">
-                            <input name="nome" type="text" placeholder="nome">
-                            <input name="email" type="text" placeholder="e-mail">
-                            <input name="senha" type="password" placeholder="senha">
-                            <input name="confirmacao-senha" type="password" placeholder="confirme a senha">
+                            <input id="ipt_nome" name="nome" type="text" placeholder="nome">
+                            <input id="ipt_emailcad" name="email" type="text" placeholder="e-mail">
+                            <input id="ipt_senhacad" name="senha" type="password" placeholder="senha">
+                            <input id="ipt_confsenha" name="confirmacao-senha" type="password" placeholder="confirme a senha">
                             <button class="btn btn-second">Cadastrar</button>
                         </form>
                     </div>
@@ -60,8 +60,8 @@
                             <h2 class="title title-second">Login</h2>
                             <p class="description description-second">Use sua conta de email e senha</p>
                             <form class="form" id="form_login" method="post" onsubmit="return entrar()">
-                                <input name="email" type="text" placeholder="e-mail">
-                                <input name="senha" type="password" placeholder="senha">
+                                <input id="ipt_email" name="email" type="text" placeholder="e-mail">
+                                <input id="ipt_senha" name="senha" type="password" placeholder="senha">
                                 <br>
                                 <button class="btn btn-second" type="submit">
                                     Entrar
@@ -138,12 +138,15 @@ var body = document.querySelector('body');
         // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
         if (email == "" || senha == "") {
             window.alert("Preencha todos os campos para prosseguir!");
+            ipt_email.style.background='red';
+            ipt_senha.style.background='red';
             finalizarAguardar();
             return false;
         }
 
         if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
             window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            ipt_email.style.background='red';
             finalizarAguardar();
             return false;
         }
@@ -207,16 +210,20 @@ var body = document.querySelector('body');
 
             window.alert("Preencha todos os campos para prosseguir!");
             if (nome == "") {
-                console.log('nome está em branco')
+                // console.log('nome está em branco')
+                ipt_nome.style.background= 'red';
             }
             if (email == "") {
-                console.log('email está em branco')
+                // console.log('email está em branco')
+                ipt_emailcad.style.background= 'red';
             }
             if (senha == "") {
-                console.log('senha está em branco')
+                // console.log('senha está em branco')
+                ipt_senhacad.style.background= 'red';
             }
             if (confirmacaoSenha == "") {
-                console.log('confirmacaoSenha está em branco')
+                // console.log('confirmacaoSenha está em branco')
+                ipt_confsenha.style.background= 'red';
             }
             finalizarAguardar();
             return false;
@@ -224,12 +231,14 @@ var body = document.querySelector('body');
 
         if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
             window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            ipt_emailcad.style.background= 'red';
             finalizarAguardar();
             return false;
         }
 
         if (senha != confirmacaoSenha) {
             window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+            ipt_confsenha.style.background= 'red';
             finalizarAguardar();
             return false;
         }

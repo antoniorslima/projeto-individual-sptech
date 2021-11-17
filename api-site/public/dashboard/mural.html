@@ -17,7 +17,7 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body onload="atualizarFeed()">
     <!-- <body onload="validarSessao()"> -->
         <ul class="navbar">
             <img src="../assets/imgs/logo branco.svg" class="logo">
@@ -184,8 +184,8 @@
                         var spanNome = document.createElement("span");
                         var divDescricao = document.createElement("div");
                         var divButtons = document.createElement("div");
-                        var btnEditar = document.createElement("button");
-                        var btnDeletar = document.createElement("button");
+                        // var btnEditar = document.createElement("button");
+                        // var btnDeletar = document.createElement("button");
 
 
                         // spanID.innerHTML = "ID: <b>" + publicacao.idComentario + "</b>";
@@ -203,21 +203,21 @@
 
                         divButtons.className = "div-buttons"
 
-                        btnEditar.className = "publicacao-btn-editar"
-                        btnEditar.id = "btnEditar" + publicacao.idComentario;
-                        btnEditar.setAttribute("onclick", `editar(${publicacao.idComentario})`);
+                        // btnEditar.className = "publicacao-btn-editar"
+                        // btnEditar.id = "btnEditar" + publicacao.idComentario;
+                        // btnEditar.setAttribute("onclick", `editar(${publicacao.idComentario})`);
 
-                        btnDeletar.className = "publicacao-btn-editar"
-                        btnDeletar.id = "btnDeletar" + publicacao.idComentario;
-                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idComentario})`);
+                        // btnDeletar.className = "publicacao-btn-editar"
+                        // btnDeletar.id = "btnDeletar" + publicacao.idComentario;
+                        // btnDeletar.setAttribute("onclick", `deletar(${publicacao.idComentario})`);
 
                         divPublicacao.appendChild(spanID);
                         divPublicacao.appendChild(spannota);
                         divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(divDescricao);
                         divPublicacao.appendChild(divButtons);
-                        divButtons.appendChild(btnEditar);
-                        divButtons.appendChild(btnDeletar);
+                        // divButtons.appendChild(btnEditar);
+                        // divButtons.appendChild(btnDeletar);
                         feed.appendChild(divPublicacao);
                     }
 
