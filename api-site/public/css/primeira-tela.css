@@ -23,7 +23,6 @@ body {
     text-decoration: none;
     background-color: white;
     color: #7ed957;
-    border: 10px;
     border-radius: 10px;
     font-weight: bold;
     padding-left: 20px;
@@ -31,24 +30,16 @@ body {
     margin-right: 30px;
 }
 
-.selecionado {
-    font-weight: bold;
+.navbar a:hover {
     background-color: #7ed957;
     color: white;
-
-}
-
-.selecionado,
-.navbar a:hover {
-    background-color: white;
-    color: #7ed957;
     font-weight: bold;
-    border: 10px;
+    border: solid 2px white;
     border-radius: 10px;
     padding-left: 20px;
     padding-right: 20px;
-   
 }
+
 
 .logo {
     width: 150px;

@@ -31,23 +31,14 @@ body {
     margin-right: 30px;
 }
 
-.selecionado {
-    font-weight: bold;
+.navbar a:hover {
     background-color: #7ed957;
     color: white;
-
-}
-
-.selecionado,
-.navbar a:hover {
-    background-color: white;
-    color: #7ed957;
     font-weight: bold;
-    border: 10px;
+    border: solid 2px white;
     border-radius: 10px;
     padding-left: 20px;
     padding-right: 20px;
-   
 }
 
 .logo {
@@ -72,7 +63,7 @@ body {
 .idiomas {
     background-color: #7ed957;
     color: white;
-    height: 200vh;
+    height: 210vh;
     align-self: center;
     justify-self: center;
     text-align: center;

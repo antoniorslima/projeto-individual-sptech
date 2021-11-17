@@ -16,101 +16,87 @@
             <h2>Inglês</h2>
         </div>
         <li><a href="./primeira-tela.html"> Voltar </a></li>
-        <li><a href="./index.html"> Sair </a></li>
+        <li><a href="./login.html"> Sair </a></li>
     </ul>
 
     <div class="idiomas">
         <div class="busca">
                 <label for="busca">busque a série desejada</label>
-                <input type="text"list="browsers" id="ipt_busca">
+                <input type="text"list="series" id="ipt_busca">
                 <img src="./assets/imgs/lupa.svg" onclick="pesquisar()">
 
-<datalist id="browsers">
-  <option value="Internet Explorer">
-  <option value="Firefox">
-  <option value="Google Chrome">
-  <option value="Opera">
-  <option value="Safari">
+<datalist id="series">
+    <option value="Friends">
+    <option value="Modern Family">
+    <option value="One day at a Time                                                                                                   ">
+    <option value="Pretty Smart">
+    <option value="Pretty Smart">
+    <option value="Pretty Smart">
+    <option value="Pretty Smart">
+    <option value="Pretty Smart">
+    <option value="Pretty Smart">
 </datalist>
             </div>
             <div class="sugestao">
                 <h4>Não sabe por onde começar? A gente escolhe pra você!</h4>
-                <button>Ver sugestão</button>
+                <button onclick="sorteio()">Ver sugestão</button>
+                <div id="div_msg"></div>
             </div>
 
         <div class="list-idiomas">
             <a href="###">
-                <div class="language">
+                <div class="language" id="friends">
                         <img src="./assets/imgs/friends.png" alt="">
                         <h2>Friends</h2>
                 </div>
             </a>
             <a href="./dashboard/mural.html">
-                <div class="language">
+                <div class="language" id="mofa">
                         <img src="./assets/imgs/modern-family.jpg" alt="">
                         <h2>Modern Family</h2>
                 </div>
             </a>
             <a href="###">
-                <div class="language">
+                <div class="language" id="oneday">
                         <img src="./assets/imgs/one-day-at-a-time.jpg" alt="">
                         <h2>One Day at a Time</h2>
                 </div>
             </a>
             <a href="###">
-                <div class="language">
-                        <img src="./assets/imgs/espanhol.svg" alt="">
-                        <h2>Friends</h2>
+                <div class="language" id="prsm">
+                        <img src="./assets/imgs/pretty-smart.jpg" alt="">
+                        <h2>Pretty Smart</h2>
                 </div>
             </a>
             <a href="ingles.html">
-                <div class="language">
-                        <img src="./assets/imgs/ingles.svg" alt="">
-                        <h2>modern family</h2>
+                <div class="language" id="tgp">
+                        <img src="./assets/imgs/The-Good-Place.jpg" alt="">
+                        <h2>The Good Place</h2>
                 </div>
             </a>
             <a href="###">
-                <div class="language">
-                        <img src="./assets/imgs/frances.svg" alt="">
-                        <h2>Francês</h2>
+                <div class="language" id="blackm">
+                        <img src="./assets/imgs/black-mirror.jpg" alt="">
+                        <h2>Black Mirror</h2>
                 </div>
             </a>
             <a href="###">
-                <div class="language">
-                        <img src="./assets/imgs/espanhol.svg" alt="">
-                        <h2>Friends</h2>
+                <div class="language" id="bdgt">
+                        <img src="./assets/imgs/bridgerton.jpg" alt="">
+                        <h2>Bridgerton</h2>
                 </div>
             </a>
             <a href="ingles.html">
-                <div class="language">
-                        <img src="./assets/imgs/ingles.svg" alt="">
-                        <h2>modern family</h2>
+                <div class="language" id="htgawm">
+                        <img src="./assets/imgs/How-To-Get-Away-With-Murder.jpg" alt="">
+                        <h2>How to Get Away</h2>
                 </div>
             </a>
             <a href="###">
-                <div class="language">
-                        <img src="./assets/imgs/frances.svg" alt="">
-                        <h2>Francês</h2>
+                <div class="language" id="wavi">
+                        <img src="./assets/imgs/WandaVision.jpg" alt="">
+                        <h2>WandaVision</h2>
                 </div>
-            </a>
-            <a href="###">
-                <div class="language">
-                        <img src="./assets/imgs/espanhol.svg" alt="">
-                        <h2>Friends</h2>
-                </div>
-            </a>
-            <a href="ingles.html">
-                <div class="language">
-                        <img src="./assets/imgs/ingles.svg" alt="">
-                        <h2>modern family</h2>
-                </div>
-            </a>
-            <a href="###">
-                <div class="language">
-                        <img src="./assets/imgs/frances.svg" alt="">
-                        <h2>Francês</h2>
-                </div>
-            </a>
         </div>
     </div>
 
@@ -130,3 +116,17 @@
            
 </body>
 </html>
+
+<script>
+    function sorteio() {
+        var nomeSerie= ['Friends','Modern Family','One day at a Time','Pretty Smart','The Good Place','Black Mirror','Bridgerton','How to Get Away','WandaVision',];
+        var numeroSerie= [1,2,3,4,5,6,7,8,9]
+        var sugestao= (Math.random() * 9).toFixed();
+        for (var cont = 0; cont < nomeSerie.length; cont++) {
+            if (sugestao == cont) {
+            div_msg.innerHTML= `${nomeSerie[sugestao]}`
+        } 
+        }
+        
+    }
+</script>
