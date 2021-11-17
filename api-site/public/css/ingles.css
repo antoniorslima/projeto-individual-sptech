@@ -172,6 +172,10 @@ input:focus {
     outline: 0;
 }
 
+input::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
 .sugestao {
     margin-top: 30px;
 }

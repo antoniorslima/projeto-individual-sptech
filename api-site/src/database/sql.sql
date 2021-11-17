@@ -42,7 +42,7 @@ CREATE TABLE usuario (
 CREATE TABLE comentario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nota INT,
-    descricao VARCHAR(150),
+    descricao VARCHAR(250),
 	fk_usuario INT,
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 ); 
