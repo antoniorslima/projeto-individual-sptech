@@ -40,10 +40,10 @@ body {
 
 .selecionado,
 .navbar a:hover {
-    background-color: white;
-    color: #7ed957;
+    background-color: #7ed957;
+    color: white;
     font-weight: bold;
-    border: 10px;
+    border: solid 2px white;
     border-radius: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -90,6 +90,36 @@ body {
     height: 300px;
     border-radius: 15px;
     margin: 30px 30px ;
+}
+
+.serie a {
+    text-decoration: none;
+    color: white;
+}
+
+.serie button {
+    border-radius: 15px;
+    font-size: 15px;
+    padding: 10px 38px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 170px;
+    align-self: center;
+    margin-top: 20px;
+    /* margin-left: 390px; */
+    background-color: #7ed957;
+    border: 2px solid white;
+    color: white;
+}
+
+.serie button:hover {
+    background-color: transparent;
+    color: #7ed957;
+    border: 2px solid #7ed957;
+}
+
+.descricao p {
+    margin: 20px 50px;
 }
 
 .comentarios {
@@ -144,7 +174,6 @@ input:focus {
     width: 150px;
     align-self: center;
     margin-top: 20px;
-    margin-left: 390px;
     background-color: #7ed957;
     border: 2px solid white;
     color: white;
@@ -155,3 +184,41 @@ input:focus {
     color: #7ed957;
     border: 2px solid #7ed957;
 }
+
+.publicacao-btn-editar {
+    cursor: pointer;
+    font-family: "Exo 2", sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 5px 8px;
+    color: white;
+    background-color: #e6005a;
+    width: 80px;
+  }
+  
+  .publicacao {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    border-bottom: 3px solid #e6005a;
+    padding: 20px;
+  }
+  
+  .publicacao > *:not(:last-child) {
+    padding: 0 0 10px 0;
+  }
+  
+  .div-results {
+    width: 100%;
+  }
+  
+  .div-results .feed-container {
+    background-color: #212124;
+    border-radius: 5px;
+    margin-bottom: 80px;
+  }
