@@ -30,11 +30,10 @@
     <option value="Modern Family">
     <option value="One day at a Time                                                                                                   ">
     <option value="Pretty Smart">
-    <option value="Pretty Smart">
-    <option value="Pretty Smart">
-    <option value="Pretty Smart">
-    <option value="Pretty Smart">
-    <option value="Pretty Smart">
+    <option value="The Good Place">
+    <option value="Black Mirror">
+    <option value="How to Get Away">
+    <option value="WandaVision">
 </datalist>
             </div>
             <div class="sugestao">
@@ -119,6 +118,7 @@
 </html>
 
 <script>
+
     function sorteio() {
         var card= document.querySelectorAll('.language');
         for (var i = 0; i < card.length; i++) {
@@ -128,6 +128,13 @@
         
         console.log(card);
         card[sugestao].style.display= 'block';
-        btn_voltar.display.style= 'block';
+        btn_voltar.style.display= 'block';
+    }
+    function voltar() {
+        var card= document.querySelectorAll('.language');
+        for (var i = 0; i < card.length; i++) {
+            card[i].style.display='block';
+        }
+        var sugestao= (Math.random() * 8).toFixed();
     }
 </script>

@@ -25,7 +25,7 @@
             <img src="../assets/imgs/ingles.svg" alt="">
                 <h2>Inglês</h2>
             </div>
-            <li><a href="../primeira-tela.html"> Voltar </a></li>
+            <li><a href="../ingles.html"> Voltar </a></li>
             <li><a href="../login.html"> Sair </a></li>
         </ul>
 
@@ -41,9 +41,12 @@
                 <div class="descricao">
                         <img src="../assets/imgs/modern-family.jpg" alt="">
                         <h2>Modern Family</h2>
+                        <h4>Nota: (MEDIA)</h4>
                         <button><a href="../quiz.html"> Fazer quiz </a></button>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ex exercitationem incidunt quae enim eius distinctio nobis provident commodi molestias officiis quisquam animi, fugiat autem delectus, corporis et consequuntur dolores?</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum aliquam officia, nihil totam illum maxime molestias mollitia assumenda dolor cupiditate voluptatem nemo ipsa itaque. Itaque provident facilis quod aliquid beatae!</p>
+                        <h4>Sinopse</h4>
+                        <p>Com uma narração oculta, a série oferece uma perspectiva honesta e muitas vezes hilária do cotidiano de uma família. O casal Phil e Claire deseja ter um relacionamento aberto com seus três filhos, mas com um adolescente que tenta amadurecer rápido demais, uma filha muito esperta para sua idade e um filho em crise, o desafio é bem grande. Jay e a esposa criam o filho ao mesmo tempo que lidam com os problemas trazidos pela grande diferença de idade. As parceiras Mitchell e Cameron enfrentam novos desafios após a adoção de uma criança do Vietnã.
+                        </p>
+                        
                 </div>
         </div>
 
@@ -72,6 +75,7 @@
                 </div>
                 <div class="div-results">
                     <h1>Confira o que outras pessoas acharam</h1>
+                    <h4>QTDE avaliações</h4>
                     <div id="feed_container" class="feed-container">
                     </div>
             </div>
@@ -145,18 +149,18 @@
 
     }
 
-    function editar(idComentario) {
-        sessionStorage.ID_POSTAGEM_EDITANDO = idComentario;
-        console.log("cliquei em editar - " + idComentario);
-        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idComentario);
-        window.location = "/dashboard/edicao-aviso.html"
+    // function editar(idComentario) {
+    //     sessionStorage.ID_POSTAGEM_EDITANDO = idComentario;
+    //     console.log("cliquei em editar - " + idComentario);
+    //     window.alert("Você será redirecionado à página de edição do aviso de id número: " + idComentario);
+    //     window.location = "/dashboard/edicao-aviso.html"
 
-    }
+    // }
 
-    function deletar(idComentario) {
-        console.log("Criar função de apagar post escolhido - ID" + idComentario);
+    // function deletar(idComentario) {
+    //     console.log("Criar função de apagar post escolhido - ID" + idComentario);
 
-    }
+    // }
 
     function atualizarFeed() {
         //aguardar();

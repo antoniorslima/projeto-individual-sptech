@@ -9,7 +9,7 @@ body {
 }
 
 .navbar {
-    width: 100%;
+    width: 100vw;
     height: 70px;
     display: flex;
     align-items: center;
@@ -70,14 +70,15 @@ body {
 }
 
 .janela {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
 }
 
 .serie  {
-    width: 40vw;
-    margin: 0 50px;
+    width: 45vw;
+    height: 85vh;
+    /* margin: 0 50px; */
     margin-top: 50px;
     background-color: white;
     border: solid #7ed957 2px;
@@ -107,28 +108,34 @@ body {
     width: 170px;
     align-self: center;
     margin-top: 20px;
+    margin-bottom: 20px;
     /* margin-left: 390px; */
     background-color: #7ed957;
     border: 2px solid white;
-    color: white;
 }
 
 .serie button:hover {
-    background-color: transparent;
-    color: #7ed957;
+    background-color: white;
     border: 2px solid #7ed957;
 }
 
+.serie a:hover {
+    color: #7ed957;
+}
+
+
 .descricao p {
-    margin: 20px 50px;
+    margin: 10px 50px 20px 35px;
+    text-align: justify;
 }
 
 .comentarios {
-    width: 45vw;
+    width: 50vw;
+    height: 70vh;
     color: #7ed957;
     background-color: white;
     border-radius: 15px;
-    margin: 0 50px;
+    /* margin: 0 50px; */
     margin-top: 50px;
 }
 
@@ -136,6 +143,10 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
+}
+
+.container h1 {
+    margin-top: 20px;
 }
 
 .comentarios label{
@@ -166,6 +177,12 @@ input:focus {
     margin: 8px;
     padding-left: 10px;
     border-radius: 15px;
+}
+
+textarea {
+    color: #7ed957;
+    box-shadow: 0 0 0 0;
+    outline: 0;
 }
 
 .comentarios button {
@@ -223,7 +240,7 @@ input:focus {
   }
   
   .div-results {
-    width: 100%;
+    width: 90vw;
     color: #7ed957;
     background-color: white;
     border-radius: 15px;
@@ -231,9 +248,13 @@ input:focus {
 }
 
 .div-results h1 {
-    margin: 30px 50px;
+    margin: 30px 50px 10px 50px;
 }
-  
+
+.div-results h4 {
+    margin: 0px 50px 30px 50px;
+}
+
   .div-results .feed-container {
     background-color: white;
     border-radius: 5px;

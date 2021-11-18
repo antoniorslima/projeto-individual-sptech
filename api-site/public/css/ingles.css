@@ -190,6 +190,11 @@ input::-webkit-calendar-picker-indicator {
     color: white;
 }
 
+#btn_voltar {
+    margin-left: auto;
+    margin-right: auto;
+}
+
  a {
     text-decoration: none;
 }
