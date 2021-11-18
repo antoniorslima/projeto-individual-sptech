@@ -40,6 +40,7 @@
             <div class="sugestao">
                 <h4>Não sabe por onde começar? A gente escolhe pra você!</h4>
                 <button onclick="sorteio()">Ver sugestão</button>
+                <button id="btn_voltar" onclick="voltar()" style="display: none">Voltar</button>
                 <div id="div_msg"></div>
             </div>
 
@@ -119,14 +120,14 @@
 
 <script>
     function sorteio() {
-        var nomeSerie= ['Friends','Modern Family','One day at a Time','Pretty Smart','The Good Place','Black Mirror','Bridgerton','How to Get Away','WandaVision',];
-        var numeroSerie= [1,2,3,4,5,6,7,8,9]
-        var sugestao= (Math.random() * 9).toFixed();
-        for (var cont = 0; cont < nomeSerie.length; cont++) {
-            if (sugestao == cont) {
-            div_msg.innerHTML= `${nomeSerie[sugestao]}`
-        } 
+        var card= document.querySelectorAll('.language');
+        for (var i = 0; i < card.length; i++) {
+            card[i].style.display='none';
         }
+        var sugestao= (Math.random() * 8).toFixed();
         
+        console.log(card);
+        card[sugestao].style.display= 'block';
+        btn_voltar.display.style= 'block';
     }
 </script>
