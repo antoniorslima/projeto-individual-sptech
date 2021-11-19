@@ -43,11 +43,11 @@
                 <div class="container"> 
                     <h1>Publicar uma avaliação</h1>
                     <div class="div-form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
+                        <!-- <form id="form_postagem" method="post" onsubmit="return publicar()"> -->
                             <label>
                                 Série:
                                 <br>
-                                <select name="serie" id="serie">
+                                <select name="serie" id="selectserie">
                                     <option value="Pretty Smart">ab</option>
                                     <option value="The Good Place">abc</option>
                                     <option value="Black Mirror">abc</option>
@@ -68,8 +68,8 @@
                                 <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
                             </label>
                             <br>
-                            <button>Enviar</button>
-                        </form>
+                            <button onclick="publicar()">Enviar</button>
+                        <!-- </form> -->
                     </div>
                     
                     </div>
@@ -117,8 +117,9 @@
         var idUsuario = sessionStorage.ID_USUARIO;
 
         var corpo = {
-            nota: form_postagem.nota.value,
-            descricao: form_postagem.descricao.value
+            serie: document.getElementById('selectserie').value,
+            nota: document.getElementById('nota').value,
+            descricao: document.getElementById('textarea_descricao').value
         }
 
         fetch(`/avisos/publicar/${idUsuario}`, {
@@ -135,7 +136,7 @@
                 window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
                 window.location = "/dashboard/mural.html";
                 limparFormulario();
-                finalizarAguardar();
+                // finalizarAguardar();
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -143,7 +144,7 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+            // finalizarAguardar();
         });
 
         return false;
@@ -195,7 +196,7 @@
                         // var btnDeletar = document.createElement("button");
                         total+= publicacao.nota; 
 
-                        spanserie.innerHTML = "ID: <b>" + publicacao.serie + "</b>";
+                        spanserie.innerHTML = "Série: <b>" + publicacao.serie + "</b>";
                         spannota.innerHTML = "Nota: <b>" + publicacao.nota + "</b>";
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
@@ -230,14 +231,14 @@
                         feed.appendChild(divPublicacao);
                     }
 
-                    finalizarAguardar();
+                    // finalizarAguardar();
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            finalizarAguardar();
+            // finalizarAguardar(); 
         });
     }
 
@@ -251,7 +252,7 @@
         divResultado.appendChild(document.createTextNode(formulario.get("descricao")));
         divResultado.innerHTML = formulario.get("descricao");
 
-        finalizarAguardar();
+        // finalizarAguardar();
 
         return false;
     }

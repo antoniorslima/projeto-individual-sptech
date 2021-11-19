@@ -20,9 +20,9 @@ function listar(req, res) {
 }
 
 function listarPorUsuario(req, res) {
-    var serie = req.params.serie;
+    var idUsuario = req.params.idUsuario;
 
-    avisoModel.listarPorUsuario(serie)
+    avisoModel.listarPorUsuario(idUsuario)
         .then(
             function (resultado) {
                 if (resultado.length > 0) {
@@ -68,7 +68,8 @@ function pesquisarDescricao(req, res) {
 function publicar(req, res) {
     var nota = req.body.nota;
     var descricao = req.body.descricao;
-    var serie = req.params.serie;
+    var serie = req.body.serie;
+    var usuario = req.params.idUsuario;
 
     if (nota == undefined) {
         res.status(400).send("O título está indefinido!");
@@ -77,7 +78,7 @@ function publicar(req, res) {
     } else if (serie == undefined) {
         res.status(403).send("O id do usuário está indefinido!");
     } else {
-        avisoModel.publicar(nota, descricao, serie)
+        avisoModel.publicar(usuario, serie, nota, descricao)
             .then(
                 function (resultado) {
                     res.json(resultado);

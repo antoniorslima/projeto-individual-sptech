@@ -16,7 +16,7 @@ CREATE TABLE aviso (
 	titulo VARCHAR(100),
     descricao VARCHAR(150),
 	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
-); 
+);
 
 CREATE TABLE medida (
 	id INT PRIMARY KEY IDENTITY(1,1),
@@ -49,10 +49,10 @@ CREATE TABLE comentario (
 ); 
 select * from comentario;
 
-CREATE TABLE medida (
+/*CREATE TABLE medida (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	temperatura DECIMAL,
 	umidade DECIMAL,
 	momento DATETIME,
 	fk_aquario INT
-);
+); */
