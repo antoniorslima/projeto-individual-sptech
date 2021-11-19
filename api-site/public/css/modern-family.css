@@ -9,7 +9,7 @@ body {
 }
 
 .navbar {
-    width: 100vw;
+    width: 100%;
     height: 70px;
     display: flex;
     align-items: center;
@@ -76,8 +76,8 @@ body {
 }
 
 .serie  {
-    width: 45vw;
-    height: 85vh;
+    width: 600px;
+    height: 800px;
     /* margin: 0 50px; */
     margin-top: 50px;
     background-color: white;
@@ -130,8 +130,8 @@ body {
 }
 
 .comentarios {
-    width: 50vw;
-    height: 70vh;
+    width: 700px;
+    height: 600px;
     color: #7ed957;
     background-color: white;
     border-radius: 15px;

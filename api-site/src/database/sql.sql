@@ -41,6 +41,7 @@ CREATE TABLE usuario (
 
 CREATE TABLE comentario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
+    serie VARCHAR(45),
 	nota INT,
     descricao VARCHAR(250),
 	fk_usuario INT,

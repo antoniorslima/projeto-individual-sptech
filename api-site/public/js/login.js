@@ -1,6 +1,6 @@
 function entrar() {
     aguardar();
-
+    
     var formulario = new URLSearchParams(new FormData(document.getElementById("form_login")));
 
     console.log("FORM LOGIN: ", formulario.get("login"));

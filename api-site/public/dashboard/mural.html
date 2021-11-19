@@ -37,24 +37,25 @@
                 <h3>Sair</h3>
             </div> -->
 
-        <div class="serie">
-                <div class="descricao">
-                        <img src="../assets/imgs/modern-family.jpg" alt="">
-                        <h2>Modern Family</h2>
-                        <h4>Nota: (MEDIA)</h4>
-                        <button><a href="../quiz.html"> Fazer quiz </a></button>
-                        <h4>Sinopse</h4>
-                        <p>Com uma narração oculta, a série oferece uma perspectiva honesta e muitas vezes hilária do cotidiano de uma família. O casal Phil e Claire deseja ter um relacionamento aberto com seus três filhos, mas com um adolescente que tenta amadurecer rápido demais, uma filha muito esperta para sua idade e um filho em crise, o desafio é bem grande. Jay e a esposa criam o filho ao mesmo tempo que lidam com os problemas trazidos pela grande diferença de idade. As parceiras Mitchell e Cameron enfrentam novos desafios após a adoção de uma criança do Vietnã.
-                        </p>
-                        
-                </div>
-        </div>
+        
 
             <div class="comentarios">
                 <div class="container"> 
                     <h1>Publicar uma avaliação</h1>
                     <div class="div-form">
                         <form id="form_postagem" method="post" onsubmit="return publicar()">
+                            <label>
+                                Série:
+                                <br>
+                                <select name="serie" id="serie">
+                                    <option value="Pretty Smart">ab</option>
+                                    <option value="The Good Place">abc</option>
+                                    <option value="Black Mirror">abc</option>
+                                    <option value="How to Get Away">asd</option>
+                                    <option value="WandaVision">ssds</option>
+                                </select>
+                            </label>
+                            <br>
                             <label>
                                 Nota:
                                 <br>
@@ -75,7 +76,7 @@
                 </div>
                 <div class="div-results">
                     <h1>Confira o que outras pessoas acharam</h1>
-                    <h4>QTDE avaliações</h4>
+                    <h4><span id="qtdeav"></span> avaliações</h4>
                     <div id="feed_container" class="feed-container">
                     </div>
             </div>
@@ -149,16 +150,16 @@
 
     }
 
-    // function editar(idComentario) {
-    //     sessionStorage.ID_POSTAGEM_EDITANDO = idComentario;
-    //     console.log("cliquei em editar - " + idComentario);
-    //     window.alert("Você será redirecionado à página de edição do aviso de id número: " + idComentario);
+    // function editar(serie) {
+    //     sessionStorage.ID_POSTAGEM_EDITANDO = serie;
+    //     console.log("cliquei em editar - " + serie);
+    //     window.alert("Você será redirecionado à página de edição do aviso de id número: " + serie);
     //     window.location = "/dashboard/edicao-aviso.html"
 
     // }
 
-    // function deletar(idComentario) {
-    //     console.log("Criar função de apagar post escolhido - ID" + idComentario);
+    // function deletar(serie) {
+    //     console.log("Criar função de apagar post escolhido - ID" + serie);
 
     // }
 
@@ -179,29 +180,32 @@
 
                     var feed = document.getElementById("feed_container");
                     feed.innerHTML = "";
+                    var total= 0;
                     for (let i = 0; i < resposta.length; i++) {
                         var publicacao = resposta[i];
 
                         // criando e manipulando elementos do HTML via JavaScript
                         var divPublicacao = document.createElement("div");
-                        var spanID = document.createElement("span");
+                        var spanserie = document.createElement("span");
                         var spannota = document.createElement("span");
                         var spanNome = document.createElement("span");
                         var divDescricao = document.createElement("div");
                         var divButtons = document.createElement("div");
                         // var btnEditar = document.createElement("button");
                         // var btnDeletar = document.createElement("button");
+                        total+= publicacao.nota; 
 
-
-                        // spanID.innerHTML = "ID: <b>" + publicacao.idComentario + "</b>";
+                        spanserie.innerHTML = "ID: <b>" + publicacao.serie + "</b>";
                         spannota.innerHTML = "Nota: <b>" + publicacao.nota + "</b>";
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
                         // btnEditar.innerHTML = "Editar";
                         // btnDeletar.innerHTML = "Deletar";
+                        // spanmedia.innerHTML= `${(total / (i+1)).toFixed(2)}`;
+                        qtdeav.innerHTML= i+1;
 
                         divPublicacao.className = "publicacao";
-                        spannota.id = "inputNumero" + publicacao.idComentario;
+                        spannota.id = "inputNumero" + publicacao.serie;
                         spanNome.className = "publicacao-nome";
                         spannota.className = "publicacao-nota";
                         divDescricao.className = "publicacao-descricao";
@@ -209,14 +213,14 @@
                         divButtons.className = "div-buttons"
 
                         // btnEditar.className = "publicacao-btn-editar"
-                        // btnEditar.id = "btnEditar" + publicacao.idComentario;
-                        // btnEditar.setAttribute("onclick", `editar(${publicacao.idComentario})`);
+                        // btnEditar.id = "btnEditar" + publicacao.serie;
+                        // btnEditar.setAttribute("onclick", `editar(${publicacao.serie})`);
 
                         // btnDeletar.className = "publicacao-btn-editar"
-                        // btnDeletar.id = "btnDeletar" + publicacao.idComentario;
-                        // btnDeletar.setAttribute("onclick", `deletar(${publicacao.idComentario})`);
+                        // btnDeletar.id = "btnDeletar" + publicacao.serie;
+                        // btnDeletar.setAttribute("onclick", `deletar(${publicacao.serie})`);
 
-                        divPublicacao.appendChild(spanID);
+                        divPublicacao.appendChild(spanserie);
                         divPublicacao.appendChild(spannota);
                         divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(divDescricao);
