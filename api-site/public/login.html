@@ -10,7 +10,7 @@
 
     <script src="./js/funcoes.js"></script>
 
-    <link rel="icon" href="./assets/imgs/logo verde.svg">
+    <link rel="icon" href="./assets/imgs/logo a.svg">
     <link rel="stylesheet" href="./css/cadastro.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -138,15 +138,15 @@ var body = document.querySelector('body');
         // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
         if (email == "" || senha == "") {
             window.alert("Preencha todos os campos para prosseguir!");
-            ipt_email.style.background='red';
-            ipt_senha.style.background='red';
+            ipt_email.style.background='#ff6961';
+            ipt_senha.style.background='#ff6961';
             // finalizarAguardar();
             return false;
         }
 
         if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
             window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
-            ipt_email.style.background='red';
+            ipt_email.style.background='#ff6961';
             // finalizarAguardar();
             return false;
         }
@@ -211,19 +211,19 @@ var body = document.querySelector('body');
             window.alert("Preencha todos os campos para prosseguir!");
             if (nome == "") {
                 // console.log('nome está em branco')
-                ipt_nome.style.background= 'red';
+                ipt_nome.style.background= '#ff6961';
             }
             if (email == "") {
                 // console.log('email está em branco')
-                ipt_emailcad.style.background= 'red';
+                ipt_emailcad.style.background= '#ff6961';
             }
             if (senha == "") {
                 // console.log('senha está em branco')
-                ipt_senhacad.style.background= 'red';
+                ipt_senhacad.style.background= '#ff6961';
             }
             if (confirmacaoSenha == "") {
                 // console.log('confirmacaoSenha está em branco')
-                ipt_confsenha.style.background= 'red';
+                ipt_confsenha.style.background= '#ff6961';
             }
             // finalizarAguardar();
             return false;
@@ -231,14 +231,14 @@ var body = document.querySelector('body');
 
         if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
             window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
-            ipt_emailcad.style.background= 'red';
+            ipt_emailcad.style.background= '#ff6961';
             // finalizarAguardar();
             return false;
         }
 
         if (senha != confirmacaoSenha) {
             window.alert("As senhas inseridas devem ser iguais para prosseguir!");
-            ipt_confsenha.style.background= 'red';
+            ipt_confsenha.style.background= '#ff6961';
             // finalizarAguardar();
             return false;
         }
