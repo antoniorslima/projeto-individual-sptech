@@ -57,15 +57,15 @@
 
 .banner {
     height: 600px;
-    /* background-color: white; */
-    background-image: url(../assets/images/Spain_Madrid.jpg);
+    background-color: white;
+    /* background-image: url(../assets/imgs/Spain_Madrid.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
 
 }
 
 .banner img {
-    margin-left: 360px;
+    margin-left: 200px;
     margin-top: 180px;
     width: 600px;
 }
@@ -73,7 +73,7 @@
 .banner h3 {
     color: white;
     background-color: #7ed957;;
-    margin-left: 582px;
+    margin-left: 450px;
     margin-top: -58px;
     width: 436px;
 }
@@ -97,6 +97,13 @@
 
 .sobre p {
     margin: 20px 200px;
+    text-align: justify;
+    text-indent: 50px; 
+}
+
+.sobre li {
+    list-style: inherit;
+    list-style-type:circle;
 }
 
 .idiomas {
@@ -125,9 +132,15 @@
     border-left:  1px solid #7ed957;
 }
 
+.language p {
+    text-align: justify;
+    text-indent: 50px; 
+}
+
 .language img {
     width: 100px;
     height: auto;
+    text-align: center;
 }
 
 .footer {
