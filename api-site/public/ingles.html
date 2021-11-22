@@ -41,6 +41,7 @@
             <div class="sugestao">
                 <h4>Não sabe por onde começar? A gente escolhe pra você!</h4>
                 <button onclick="sorteio()">Ver sugestão</button>
+                <button onclick="comentarios()">Ver comentários</button>
                 <button id="btn_voltar" onclick="voltar()" style="display: none">Voltar</button>
                 <div id="div_msg"></div>
             </div>
@@ -132,6 +133,11 @@
         card[sugestao].style.display= 'block';
         btn_voltar.style.display= 'block';
     }
+
+    function comentarios() {
+        window.location= "./dashboard/mural.html"
+    }
+
     function voltar() {
         var card= document.querySelectorAll('.language');
         for (var i = 0; i < card.length; i++) {
