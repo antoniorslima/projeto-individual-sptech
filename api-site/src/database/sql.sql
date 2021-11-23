@@ -40,3 +40,4 @@ values
 
 select * from comentario;
 
+select * from comentario cm inner join usuario us on cm.fk_usuario= us.id;
