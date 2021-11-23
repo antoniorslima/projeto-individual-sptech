@@ -50,7 +50,7 @@ body {
 .idiomas {
     background-color: #7ed957;
     color: white;
-    height: 80vh;
+    height: 85vh;
     align-self: center;
     justify-self: center;
     text-align: center;
@@ -65,13 +65,13 @@ body {
     width: 620PX;
     border-radius: 15px;
     padding: 50px 50px;
-    margin-left: 360px;
-    margin-top: 100px;
+    margin-left: 320px;
+    margin-top: 50px;
  }
 
 .list-idiomas {
     width: 100%;
-    padding-top: 100px;  
+    padding-top: 60px;  
     display: flex;
     align-items: center;
     justify-content: center;

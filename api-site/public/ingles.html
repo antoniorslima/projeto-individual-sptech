@@ -41,7 +41,7 @@
             <div class="sugestao">
                 <h4>Não sabe por onde começar? A gente escolhe pra você!</h4>
                 <button onclick="sorteio()">Ver sugestão</button>
-                <button onclick="comentarios()">Ver comentários</button>
+                <button id="btn_comentarios" onclick="comentarios()">Ver comentários</button>
                 <button id="btn_voltar" onclick="voltar()" style="display: none">Voltar</button>
                 <div id="div_msg"></div>
             </div>
@@ -148,7 +148,7 @@
     }
 
     function pesquisar() {
-        var series= ['Friends', 'Modern Family'];
+        var series= ['Friends', 'Modern Family', ];
         for (var i = 0; i < card.length; i++) {
             card[i].style.display='none';
     }

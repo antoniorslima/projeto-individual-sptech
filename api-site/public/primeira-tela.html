@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agradecimentos</title>
+    <link rel="icon" href="./assets/imgs/logo a.svg">
     <link rel="stylesheet" href="./CSS/primeira-tela.css">
 </head>
-<body class="signup-js">
+<body class="signup-js" onload="nome()">
     <!-- primeiro passo: esturuturar o html -->
         <ul class="navbar">
             <img src="./assets/imgs/logo branco.svg" class="logo">
@@ -16,7 +17,7 @@
 
         <div class="idiomas">
 
-            <p class="chamada">Olá, NOME! Escolha um idioma e confira as sugestões</p>
+            <p class="chamada">Olá, <span id="span_nome">NOME</span>! Escolha um idioma e confira as sugestões</p>
 
             <div class="list-idiomas">
                 <a href="###">
@@ -56,3 +57,12 @@
            
 </body>
 </html>
+
+<script>
+    function nome() {
+    var nome = sessionStorage.getItem("NOME_USUARIO") 
+        span_nome.innerHTML= nome;
+    }
+    
+
+</script>
