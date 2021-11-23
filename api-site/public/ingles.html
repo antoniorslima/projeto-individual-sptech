@@ -146,4 +146,12 @@
         var sugestao= (Math.random() * 8).toFixed();
         btn_voltar.style.display= 'none';
     }
+
+    function pesquisar() {
+        var series= ['Friends', 'Modern Family'];
+        for (var i = 0; i < card.length; i++) {
+            card[i].style.display='none';
+    }
+            card[card.indexOf(ipt_busca.value)].style.display='block';
+    }
 </script>

@@ -1,0 +1,177 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    modern family
+    <button id="btn_iniciar" onclick="iniciar()">Iniciar Quiz</button>
+    <div id="div_pergunta"></div>
+    <div id="div_resposta" style="display: none;"><input id="ipt_resposta" type="text" placeholder="respta 1" onchange="questao1()"></div>
+    <div>Questões
+        <div id="div_1" style="background-color: gray;">1</div>
+        <div id="div_2" style="background-color: gray;">2</div>
+        <div id="div_3" style="background-color: gray;">3</div>
+        <div id="div_4" style="background-color: gray;">4</div>
+        <div id="div_5" style="background-color: gray;">5</div>
+        https://www.codigofonte.com.br/codigos/jogo-de-quiz-com-javascript
+        https://www.clubedohardware.com.br/topic/1404477-formulario-de-perguntas-utilizando-htmljs/
+        https://www.sitepoint.com/simple-javascript-quiz/
+    </div>
+
+</body>
+</html>
+
+<script>
+    var o = [];
+    var acertos=0; 
+    var erros=0; 
+    var pergunta = ['Quantos anos tem o Jay?','Quantos anos tem a Gloria?','Quantos anos tem o Manny?'];
+    var resposta = ['sim',22,'jose'];
+    var t=10
+function iniciar() {
+btn_iniciar.style.display= 'none';
+div_pergunta.innerHTML= `${pergunta[0]}`
+div_resposta.style.display= 'block';
+
+}
+function questao1() {
+    if (ipt_resposta.value == resposta[0]) {
+    div_1.style.background= 'green';
+    div_pergunta.innerHTML=`${pergunta[1]}`
+
+}
+}
+
+</script> -->
+<!DOCTYPE html> <html lang="en"> <head>
+    <meta charset="UTF-8">
+    <title>Exercicio-4</title> </head> <body>
+    <p>
+        Crie um formulário com 10 questões de verdadeiro ou falso. O usuário deve preencher um formulário com as questões
+        , cada questão deve ter dois radio buttons com as respostas possíveis. Ao final do formulário deve existir um bo
+        tão enviar. Ao clicar no botão deve-se validar as questões, para cada resposta preenchida corretamente deve-se so
+        mar 1 ponto, para cada resposta errada ou em branco deve-se somar 0 pontos, e então apresentar a pontuação ao us
+        uário.
+    </p>
+    <form action="">
+        <fieldset>
+            <p>O sol é verdadeiramente amarelo ?</p>
+            <input type="radio" name="resposta" value="op1" class="teste">Sim
+            <input type="radio" name="resposta" value="op2" class="teste">Não
+
+            <p>Um raio pode derrubar um avião ?</p>
+            <input type="radio" name="respostaUm" value="op1">Sim
+            <input type="radio" name="respostaUm" value="op2">Não
+
+            <p>A chuva faz a internet ficar mais lenta ?</p>
+            <input type="radio" name="respostaDois" value="op1">Sim
+            <input type="radio" name="respostaDois" value="op2">Não
+
+            <p>Se houvesse guerras no espaço, como em Star Wars, o barulho de tiros seriam ouvidos?</p>
+            <input type="radio" name="respostaTres" value="op1">Sim
+            <input type="radio" name="respostaTres" value="op2">Não
+
+            <p>Cd's piratas podem danificar seu aparelho ?</p>
+            <input type="radio" name="respostaQuatro" value="op1">Sim
+            <input type="radio" name="respostaQuatro" value="op2">Não
+
+            <p>A formula da coca NUNCA foi descober ?</p>
+            <input type="radio" name="respostaCinco" value="op1">Sim
+            <input type="radio" name="respostaCinco" value="op2">Não
+
+            <p>Os kamikazes usavam capacetes ?</p>
+            <input type="radio" name="respostaSeis" value="op1">Sim
+            <input type="radio" name="respostaSeis" value="op2">Não
+
+            <p>Bucky Barnes (Capitão América : guerra civil) nunca existiu nos quadrinhos !</p>
+            <input type="radio" name="respostaSete" value="op1">Sim
+            <input type="radio" name="respostaSete" value="op2">Não
+
+            <p>Uno é um jogo pacífico !</p>
+            <input type="radio" name="respostaOito" value="op1">Sim
+            <input type="radio" name="respostaOito" value="op2">Não
+
+            <p>Homem aranha é o melhor heroi da Marvel ?</p>
+            <input type="radio" name="respostaNove" value="op1">Sim
+            <input type="radio" name="respostaNove" value="op2">Não <br> <br>
+
+
+            <button onclick="validarRespostas()">Validar Respostas</button>
+
+        </fieldset>
+    </form>
+ </body> 
+ 
+ </html>
+
+ <script>
+     function validarRespostas(){
+
+var total=0;
+
+    if (document.querySelector('input[name = resposta]:checked')){
+    if (document.querySelector('input[name = resposta]:checked').value=="op1"){
+    total =total+1;
+    }
+    }    
+    
+    if (document.querySelector('input[name = respostaUm]:checked')){
+    if (document.querySelector('input[name = respostaUm]:checked').value=="op1"){
+    total =total+1;
+    }
+    }
+    
+    if (document.querySelector('input[name = respostaDois]:checked')){
+    if (document.querySelector('input[name = respostaDois]:checked').value=="op1"){
+    total =total+1;
+    }
+    }
+
+    if (document.querySelector('input[name = respostaTres]:checked')){
+    if (document.querySelector('input[name = respostaTres]:checked').value=="op1"){
+    total =total+1;
+    }
+    }
+
+    if (document.querySelector('input[name = respostaQuatro]:checked')){
+    if (document.querySelector('input[name = respostaQuatro]:checked').value=="op1"){
+    total =total+1;
+    }
+    }
+
+    if (document.querySelector('input[name = respostaCinco]:checked')){
+    if (document.querySelector('input[name = respostaCinco]:checked').value=="op1"){
+    total =total+1;
+    }
+    }
+
+    if (document.querySelector('input[name = respostaSeis]:checked')){
+    if (document.querySelector('input[name = respostaSeis]:checked').value=="op1"){
+    total =total+1;
+    }
+    }
+    
+    if (document.querySelector('input[name = respostaSete]:checked')){
+    if (document.querySelector('input[name = respostaSete]:checked').value=="op1"){
+    total =total+1;
+    }
+    }    
+    
+    if (document.querySelector('input[name = respostaOito]:checked')){
+    if (document.querySelector('input[name = respostaOito]:checked').value=="op1"){
+    total =total+1;
+    }
+    }    
+    
+    if (document.querySelector('input[name = respostaNove]:checked')){
+    if (document.querySelector('input[name = respostaNove]:checked').value=="op1"){
+    total =total+1;
+    }
+    }    
+    console.log(total);
+}
+ </script>
