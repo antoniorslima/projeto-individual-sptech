@@ -20,20 +20,21 @@ select * from usuario;
 
 CREATE TABLE serie (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    nomeSerie VARCHAR(60)
+    nomeSerie VARCHAR(60),
+	plataforma VARCHAR(30)
 ); 
 
-insert into serie (nomeSerie)
+insert into serie (nomeSerie, plataforma)
 values
-('Friends'),
-('Modern Family'),
-('One day at a Time'),
-('Pretty Smart'),
-('The good Place'),
-('Black Mirror'),
-('Bridgerton'),
-('How to Get Away'),
-('WandaVision');
+('Friends','HBO MAX'),
+('Modern Family', 'GloboPlay'),
+('One day at a Time', 'Netflix'),
+('Pretty Smart', 'Netflix'),
+('The good Place', 'Netflix'),
+('Black Mirror', 'Netflix'),
+('Bridgerton', 'Netflix'),
+('How to Get Away', 'Netflix'),
+('WandaVision', 'DisneyPlus');
 
 select * from serie;
 

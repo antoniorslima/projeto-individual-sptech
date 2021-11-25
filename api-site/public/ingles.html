@@ -24,7 +24,7 @@
         <div class="busca">
                 <label for="busca">busque a série desejada</label>
                 <input type="text"list="series" id="ipt_busca">
-                <img src="./assets/imgs/lupa.svg" onclick="pesquisar()">
+                <img src="./assets/imgs/lupa.svg">
 
         <datalist id="series">
             <option value="Friends">
@@ -147,11 +147,5 @@
         btn_voltar.style.display= 'none';
     }
 
-    function pesquisar() {
-        var series= ['Friends', 'Modern Family', ];
-        for (var i = 0; i < card.length; i++) {
-            card[i].style.display='none';
-    }
-            card[card.indexOf(ipt_busca.value)].style.display='block';
-    }
+
 </script>
