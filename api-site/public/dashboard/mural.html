@@ -17,7 +17,7 @@
         rel="stylesheet">
 </head>
 
-<body onload="atualizarFeed()">
+<body onload="atualizarFeed(), qtdCom()">
     <!-- <body onload="validarSessao()"> -->
         <ul class="navbar">
             <img src="../assets/imgs/logo branco.svg" class="logo">
@@ -208,7 +208,7 @@
                         // btnEditar.innerHTML = "Editar";
                         // btnDeletar.innerHTML = "Deletar";
                         // spanmedia.innerHTML= `${(total / (i+1)).toFixed(2)}`;
-                        qtdeav.innerHTML= i+1;
+                        //qtdeav.innerHTML= i+1;
 
                         divPublicacao.className = "publicacao";
                         spannota.id = "inputNumero" + publicacao.serie;
@@ -262,4 +262,14 @@
         return false;
     }
 
+    function qtdCom() {
+        fetch("/avisos/quantidade").then(function(resultado) {
+            console.log(resultado.contagem);
+        })
+        .catch(function(erro) {
+            console.log(erro);
+        })
+    
+
+    }
 </script>
