@@ -95,7 +95,7 @@ function publicar(idUsuario, serie, nota, descricao) {
 
 function quantidade() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
-    var qtd= `
+    var qtd = `
     SELECT
     count(id) AS contagem from comentario;
     `;
@@ -103,10 +103,21 @@ function quantidade() {
     return database.executar(qtd);
 }
 
+function telaSerie() {
+    console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var infoSerie = `
+    select s.plataforma AS plataforma, round(avg(nota),2) AS media from serie s inner join comentario c on c.fk_serie= s.id where s.id= 2;
+
+    `;
+    console.log("Executando a instrução SQL: \n" + infoSerie);
+    return database.executar(infoSerie);
+}
+
 module.exports = {
     listar,
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
-    quantidade
+    quantidade,
+    telaSerie
 }

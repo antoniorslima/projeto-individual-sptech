@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +9,13 @@
     <title>Inglês</title>
     <link rel="stylesheet" href="./CSS/ingles.css">
 </head>
+
 <body class="signup-js">
     <!-- primeiro passo: esturuturar o html -->
     <ul class="navbar">
         <img src="./assets/imgs/logo branco.svg" class="logo">
         <div class="titulo">
-        <img src="./assets/imgs/ingles.svg" alt="">
+            <img src="./assets/imgs/ingles.svg" alt="">
             <h2>Inglês</h2>
         </div>
         <li><a href="./primeira-tela.html"> Voltar </a></li>
@@ -22,11 +24,11 @@
 
     <div class="idiomas">
         <div class="busca">
-                <label for="busca">busque a série desejada</label>
-                <input type="text"list="series" id="ipt_busca">
-                <img src="./assets/imgs/lupa.svg">
+            <label for="busca">busque a série desejada</label>
+            <input type="text" list="series" id="ipt_busca">
+            <img src="./assets/imgs/lupa.svg">
 
-        <datalist id="series">
+            <datalist id="series">
             <option value="Friends">
             <option value="Modern Family">
             <option value="One day at a Time                                                                                                   ">
@@ -36,116 +38,114 @@
             <option value="How to Get Away">
             <option value="WandaVision">
         </datalist>
-        
-            </div>
-            <div class="sugestao">
-                <h4>Não sabe por onde começar? A gente escolhe pra você!</h4>
-                <button onclick="sorteio()">Ver sugestão</button>
-                <button id="btn_comentarios" onclick="comentarios()">Ver comentários</button>
-                <button id="btn_voltar" onclick="voltar()" style="display: none">Voltar</button>
-                <div id="div_msg"></div>
-            </div>
+
+        </div>
+        <div class="sugestao">
+            <h4>Não sabe por onde começar? A gente escolhe pra você!</h4>
+            <button onclick="sorteio()">Ver sugestão</button>
+            <button id="btn_comentarios" onclick="comentarios()">Ver comentários</button>
+            <button id="btn_voltar" onclick="voltar()" style="display: none">Voltar</button>
+            <div id="div_msg"></div>
+        </div>
 
         <div class="list-idiomas">
             <a href="###">
                 <div class="language" id="friends">
-                        <img src="./assets/imgs/friends.png" alt="">
-                        <h2>Friends <span id="span_friends"></span></h2>
+                    <img src="./assets/imgs/friends.png" alt="">
+                    <h2>Friends <span id="span_friends"></span></h2>
                 </div>
             </a>
             <a href="./dashboard/modern-family.html">
                 <div class="language" id="mofa">
-                        <img src="./assets/imgs/modern-family.jpg" alt="">
-                        <h2>Modern Family <span id="span_mofa"></span></h2>
+                    <img src="./assets/imgs/modern-family.jpg" alt="">
+                    <h2>Modern Family <span id="span_mofa"></span></h2>
                 </div>
             </a>
             <a href="###">
                 <div class="language" id="oneday">
-                        <img src="./assets/imgs/one-day-at-a-time.jpg" alt="">
-                        <h2>One Day at a Time <span id="span_oneday"></span></h2>
+                    <img src="./assets/imgs/one-day-at-a-time.jpg" alt="">
+                    <h2>One Day at a Time <span id="span_oneday"></span></h2>
                 </div>
             </a>
             <a href="###">
                 <div class="language" id="prsm">
-                        <img src="./assets/imgs/pretty-smart.jpg" alt="">
-                        <h2>Pretty Smart <span id="span_prsm"></span></h2>
+                    <img src="./assets/imgs/pretty-smart.jpg" alt="">
+                    <h2>Pretty Smart <span id="span_prsm"></span></h2>
                 </div>
             </a>
             <a href="ingles.html">
                 <div class="language" id="tgp">
-                        <img src="./assets/imgs/The-Good-Place.jpg" alt="">
-                        <h2>The Good Place <span id="span_tgp"></span></h2>
+                    <img src="./assets/imgs/The-Good-Place.jpg" alt="">
+                    <h2>The Good Place <span id="span_tgp"></span></h2>
                 </div>
             </a>
             <a href="###">
                 <div class="language" id="blackm">
-                        <img src="./assets/imgs/black-mirror.jpg" alt="">
-                        <h2>Black Mirror <span id="span_blackm"></span></h2>
+                    <img src="./assets/imgs/black-mirror.jpg" alt="">
+                    <h2>Black Mirror <span id="span_blackm"></span></h2>
                 </div>
             </a>
             <a href="###">
                 <div class="language" id="bdgt">
-                        <img src="./assets/imgs/bridgerton.jpg" alt="">
-                        <h2>Bridgerton <span id="span_bdgt"></span></h2>
+                    <img src="./assets/imgs/bridgerton.jpg" alt="">
+                    <h2>Bridgerton <span id="span_bdgt"></span></h2>
                 </div>
             </a>
             <a href="ingles.html">
                 <div class="language" id="htgawm">
-                        <img src="./assets/imgs/How-To-Get-Away-With-Murder.jpg" alt="">
-                        <h2>How to Get Away <span id="span_htgawm"></span></h2>
+                    <img src="./assets/imgs/How-To-Get-Away-With-Murder.jpg" alt="">
+                    <h2>How to Get Away <span id="span_htgawm"></span></h2>
                 </div>
             </a>
             <a href="###">
                 <div class="language" id="wavi">
-                        <img src="./assets/imgs/WandaVision.jpg" alt="">
-                        <h2>WandaVision <span id="span_wavi"></span></h2>
+                    <img src="./assets/imgs/WandaVision.jpg" alt="">
+                    <h2>WandaVision <span id="span_wavi"></span></h2>
                 </div>
         </div>
     </div>
 
 
-        <div class="footer">
-            <h2>@antonioronij</h2>
-            <h2>todos os direitos reservados</h2>
-            <div class="social-media">
-                <img src="./assets/imgs/instagram.svg" alt="">
-                <img src="./assets/imgs/facebook.svg" alt="">
-                <img src="./assets/imgs/twitter.svg" alt="">
-                <img src="./assets/imgs/linkedin.svg" alt="">
-            </div>
-            <h2>2021</h2>
+    <div class="footer">
+        <h2>@antonioronij</h2>
+        <h2>todos os direitos reservados</h2>
+        <div class="social-media">
+            <img src="./assets/imgs/instagram.svg" alt="">
+            <img src="./assets/imgs/facebook.svg" alt="">
+            <img src="./assets/imgs/twitter.svg" alt="">
+            <img src="./assets/imgs/linkedin.svg" alt="">
         </div>
+        <h2>2021</h2>
+    </div>
 
-           
+
 </body>
+
 </html>
 
 <script>
-
     function sorteio() {
-        var card= document.querySelectorAll('.language');
+        var card = document.querySelectorAll('.language');
         for (var i = 0; i < card.length; i++) {
-            card[i].style.display='none';
+            card[i].style.display = 'none';
         }
-        var sugestao= (Math.random() * 8).toFixed();
-        
+        var sugestao = (Math.random() * 8).toFixed();
+
         console.log(card);
-        card[sugestao].style.display= 'block';
-        btn_voltar.style.display= 'block';
+        card[sugestao].style.display = 'block';
+        btn_voltar.style.display = 'block';
     }
 
     function comentarios() {
-        window.location= "./dashboard/mural.html"
+        window.location = "./dashboard/mural.html"
     }
 
     function voltar() {
-        var card= document.querySelectorAll('.language');
+        var card = document.querySelectorAll('.language');
         for (var i = 0; i < card.length; i++) {
-            card[i].style.display='block';
+            card[i].style.display = 'block';
         }
-        var sugestao= (Math.random() * 8).toFixed();
-        btn_voltar.style.display= 'none';
+        var sugestao = (Math.random() * 8).toFixed();
+        btn_voltar.style.display = 'none';
     }
-
-
 </script>

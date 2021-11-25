@@ -64,6 +64,7 @@ select * from comentario;
 select count(id) from comentario;
 
 select round(avg(nota),2) from comentario where fk_serie= 2;
+select s.plataforma, round(avg(nota),2) AS media from serie s inner join comentario c on c.fk_serie= s.id where s.id= 2;
 
 select * from comentario cm inner join usuario us on cm.fk_usuario= us.id;
 

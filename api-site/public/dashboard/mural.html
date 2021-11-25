@@ -12,42 +12,40 @@
     <script src="../js/funcoes.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body onload="atualizarFeed(), qtdCom()">
     <!-- <body onload="validarSessao()"> -->
-        <ul class="navbar">
-            <img src="../assets/imgs/logo branco.svg" class="logo">
-            <div class="titulo">
+    <ul class="navbar">
+        <img src="../assets/imgs/logo branco.svg" class="logo">
+        <div class="titulo">
             <img src="../assets/imgs/ingles.svg" alt="">
-                <h2>Inglês</h2>
-            </div>
-            <li><a href="../ingles.html"> Voltar </a></li>
-            <li><a href="../login.html"> Sair </a></li>
-        </ul>
+            <h2>Inglês</h2>
+        </div>
+        <li><a href="../ingles.html"> Voltar </a></li>
+        <li><a href="../login.html"> Sair </a></li>
+    </ul>
 
     <div class="janela">
 
 
-   
-            <!-- <div class="btn-logout" onclick="limparSessao()">
+
+        <!-- <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div> -->
 
-        
 
-            <div class="comentarios">
-                <div class="container"> 
-                    <h1>Publicar uma avaliação</h1>
-                    <div class="div-form">
-                        <!-- <form id="form_postagem" method="post" onsubmit="return publicar()"> -->
-                            <!-- <label>
+
+        <div class="comentarios">
+            <div class="container">
+                <h1>Publicar uma avaliação</h1>
+                <div class="div-form">
+                    <!-- <form id="form_postagem" method="post" onsubmit="return publicar()"> -->
+                    <!-- <label>
                                 Série:
                                  -->
-                                <select name="serie" id="selectserie">
+                    <select name="serie" id="selectserie">
                                     <option value="Pretty Smart">Selecione a série</option>
                                     <option value="1">Friends</option>
                                     <option value="2">Modern Family</option>
@@ -59,38 +57,38 @@
                                     <option value="8">How to Get Away</option>
                                     <option value="9">WandaVision</option>
                                 </select>
-                            </label>
-                            <br>
-                            <label>
+                    </label>
+                    <br>
+                    <label>
                                 Nota:
                                 <br>
                                 <input name="nota" id="nota" maxlength="100" type="text">
                             </label>
-                            <br>
-                            <label>
+                    <br>
+                    <label>
                                 Descrição (máximo de 250 caracteres):
                                 <br>
                                 <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
                             </label>
-                            <br>
-                            <button onclick="publicar()">Enviar</button>
-                        <!-- </form> -->
-                    </div>
-                    
-                    </div>
+                    <br>
+                    <button onclick="publicar()">Enviar</button>
+                    <!-- </form> -->
                 </div>
-                <div class="div-results">
-                    <h1>Confira o que outras pessoas acharam</h1>
-                    <h4><span id="qtdeav"></span> avaliações</h4>
-                    <div id="feed_container" class="feed-container">
-                    </div>
+
             </div>
+        </div>
+        <div class="div-results">
+            <h1>Confira o que outras pessoas acharam</h1>
+            <h4><span id="qtdeav"></span> avaliações</h4>
+            <div id="feed_container" class="feed-container">
+            </div>
+        </div>
 
 
 
 
-            <!-- MODAL -->
-            <!-- <div id="div_modal" class="div-modal">
+        <!-- MODAL -->
+        <!-- <div id="div_modal" class="div-modal">
                 <div id="modal_backdrop" onclick="fecharModal()" class="modal-backdrop">
                 </div>
                 <div id="modal_container" class="modal-container">
@@ -98,8 +96,8 @@
                 </div>
             </div> -->
 
-            <!-- AGUARDAR -->
-            <!-- <div id="div_aguardar" class="div-aguardar">
+        <!-- AGUARDAR -->
+        <!-- <div id="div_aguardar" class="div-aguardar">
                 <img src="./assets/aguarde-pink3.gif" id="img_aguarde">
             </div>  -->
 
@@ -113,7 +111,6 @@
 </html>
 
 <script>
-
     function limparFormulario() {
         document.getElementById("form_postagem").reset();
     }
@@ -133,7 +130,7 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(corpo)
-        }).then(function (resposta) {
+        }).then(function(resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -147,7 +144,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
             // finalizarAguardar();
         });
@@ -171,7 +168,7 @@
 
     function atualizarFeed() {
         //aguardar();
-        fetch("/avisos/listar").then(function (resposta) {
+        fetch("/avisos/listar").then(function(resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
                     var feed = document.getElementById("feed_container");
@@ -181,12 +178,12 @@
                     throw "Nenhum resultado encontrado!!";
                 }
 
-                resposta.json().then(function (resposta) {
+                resposta.json().then(function(resposta) {
                     // console.log("Dados recebidos: ", JSON.stringify(resposta));
 
                     var feed = document.getElementById("feed_container");
                     feed.innerHTML = "";
-                    var total= 0;
+                    var total = 0;
                     for (let i = 0; i < resposta.length; i++) {
                         var publicacao = resposta[i];
 
@@ -199,7 +196,7 @@
                         var divButtons = document.createElement("div");
                         // var btnEditar = document.createElement("button");
                         // var btnDeletar = document.createElement("button");
-                        total+= publicacao.nota; 
+                        total += publicacao.nota;
 
                         spanserie.innerHTML = "Série: <b>" + publicacao.serie + "</b>";
                         spannota.innerHTML = "Nota: <b>" + publicacao.nota + "</b>";
@@ -241,7 +238,7 @@
             } else {
                 throw ('Houve um erro na API!');
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.error(resposta);
             // finalizarAguardar(); 
         });
@@ -265,18 +262,13 @@
     function qtdCom() {
         fetch("/avisos/quantidade").then(function(resultado) {
             // console.log(resultado.json());
-            resultado.json().then(json=>{
-                var contagem= json.contagem;
-            qtdeav.innerHTML= contagem;
-            }).catch(function(erro){
+            resultado.json().then(json => {
+                var contagem = json.contagem;
+                qtdeav.innerHTML = contagem;
+            }).catch(function(erro) {
                 console.log(erro);
             })
-           
-        })
-        .catch(function(erro) {
-            console.log(erro);
-        })
-    
 
+        })
     }
 </script>
