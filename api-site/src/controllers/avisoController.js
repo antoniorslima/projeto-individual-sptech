@@ -22,7 +22,7 @@ function listar(req, res) {
 function quantidade(req, res) {
     avisoModel.quantidade().then(function (resultado) {
         if (resultado.length > 0) {
-            res.status(200).json(resultado);
+            res.status(200).json(resultado[0]);
         } else {
             res.status(204).send("Nenhum resultado encontrado!")
         }

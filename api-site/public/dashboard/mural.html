@@ -182,7 +182,7 @@
                 }
 
                 resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    // console.log("Dados recebidos: ", JSON.stringify(resposta));
 
                     var feed = document.getElementById("feed_container");
                     feed.innerHTML = "";
@@ -264,7 +264,14 @@
 
     function qtdCom() {
         fetch("/avisos/quantidade").then(function(resultado) {
-            console.log(resultado.contagem);
+            // console.log(resultado.json());
+            resultado.json().then(json=>{
+                var contagem= json.contagem;
+            qtdeav.innerHTML= contagem;
+            }).catch(function(erro){
+                console.log(erro);
+            })
+           
         })
         .catch(function(erro) {
             console.log(erro);
