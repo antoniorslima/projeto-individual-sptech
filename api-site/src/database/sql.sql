@@ -68,12 +68,3 @@ select s.plataforma as plataforma, round(avg(nota),2) AS media from serie s inne
 select s.plataforma as plataforma, round(avg(nota),2) AS media from serie s inner join comentario c on c.fk_serie= s.id group by(s.id);
 select * from comentario cm inner join usuario us on cm.fk_usuario= us.id;
 
-
-/*CREATE TABLE comentario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-    serie VARCHAR(45),
-	nota INT,
-    descricao VARCHAR(250),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
-); 
