@@ -105,12 +105,12 @@ function quantidade() {
 
 function telaSerie() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
-    var infoSerie = `
-    select s.plataforma AS plataforma, round(avg(nota),2) AS media from serie s inner join comentario c on c.fk_serie= s.id where s.id= 2;
+    var media = `
+    select s.plataforma as plataforma, round(avg(nota),2) AS media from serie s inner join comentario c on c.fk_serie= s.id where s.id= 2;
 
     `;
-    console.log("Executando a instrução SQL: \n" + infoSerie);
-    return database.executar(infoSerie);
+    console.log("Executando a instrução SQL: \n" + media);
+    return database.executar(media);
 }
 
 module.exports = {

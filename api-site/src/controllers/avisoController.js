@@ -109,7 +109,7 @@ function publicar(req, res) {
 }
 
 function telaSerie(req, res) {
-    avisoModel.quantidade().then(function(resultado) {
+    avisoModel.telaSerie().then(function(resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado[0]);
         } else {
