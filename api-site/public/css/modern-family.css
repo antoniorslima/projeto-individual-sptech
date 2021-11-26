@@ -78,7 +78,7 @@ body {
 
 .serie  {
     width: 75vw;
-    height: 500px;
+    height: 450px;
     /* margin: 0 50px; */
     margin-top: 100px;
     background-color: white;
@@ -89,6 +89,10 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+}
+
+.serie h2{
+    
 }
 
 .serie iframe {
@@ -129,7 +133,7 @@ body {
 
 
 .sinopse {
-    width: 450px;
+    width: 400px;
     /* border-left: solid 2px #7ed957; */
     margin: 50px 20px;
 }

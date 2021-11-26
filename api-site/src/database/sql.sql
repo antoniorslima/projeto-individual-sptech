@@ -27,7 +27,7 @@ CREATE TABLE serie (
 insert into serie (nomeSerie, plataforma)
 values
 ('Friends','HBO MAX'),
-('Modern Family', 'GloboPlay'),
+('Modern Family', 'Star+'),
 ('One day at a Time', 'Netflix'),
 ('Pretty Smart', 'Netflix'),
 ('The good Place', 'Netflix'),
