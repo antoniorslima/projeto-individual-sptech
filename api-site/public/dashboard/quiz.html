@@ -5,167 +5,300 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
+    <link rel="stylesheet" href="../css/ingles.css">
 </head>
 <body>
-    <div id="div_1">
-Qual seu genero favorito?
-<button onclick="pergunta1(1)">Comedia</button>
-<button onclick="pergunta1(2)">Acao</button>
-<button onclick="pergunta1(3)">Drama</button>
+    <div id="div_1" class="pergunta">
+<button class="prox" onclick="proxima(1)">Próxima</button>
+<h3>Qual tipo de série favorito?</h3>
+<button id="p1b1" onclick="pergunta1(1)">Comédia</button>
+<button id="p1b2" onclick="pergunta1(2)">Ação</button>
+<button id="p1b3" onclick="pergunta1(3)">Drama</button>
 <br>
-<button onclick="proxima(1)">Proxima</button>
+
 </div>
 
-<div id="div_2" style="display: none;">
-    Qual a duracao ideal de um episodio para voce?
-    <button onclick="pergunta2(1)">20 minutos</button>
-    <button onclick="pergunta2(2)">40 minutos</button>
-    <button onclick="pergunta2(3)"> ate 1 hora</button>
+<div id="div_2" class="pergunta" style="display: none;">
+    <button class="prox" onclick="proxima(2)">Próxima</button>
+    <h3>Qual a duração ideal de um episodio para voce?</h3>
+    <button id="p2b1" onclick="pergunta2(1)">20 minutos</button>
+    <button id="p2b2" onclick="pergunta2(2)">40 minutos</button>
+    <button id="p2b3" onclick="pergunta2(3)"> até 1 hora</button>
     <br>
-    <button onclick="proxima(2)">Proxima</button>
+    
     </div>
 
-    <div id="div_3" style="display: none;">
-        Qual a sua faixa etaria?
-        <button onclick="pergunta3(1)">Ate 16 anos</button>
-        <button onclick="pergunta3(2)">entre 16 e 25 anos</button>
-        <button onclick="pergunta3(3)">acima de 25 anos</button>
+    <div id="div_3" class="pergunta" style="display: none;">
+        <button class="prox" onclick="proxima(3)">Próxima</button>
+        <h3>Qual a sua faixa etária?</h3>
+        <button id="p3b1" onclick="pergunta3(1)">Até 16 anos</button>
+        <button id="p3b2" onclick="pergunta3(2)">Entre 16 e 25 anos</button>
+        <button id="p3b3" onclick="pergunta3(3)">Acima de 25 anos</button>
         <br>
-        <button onclick="proxima(3)">Proxima</button>
+        
         </div>
 
-        <div id="div_4" style="display: none;">
-            Voce prefere
-            <button onclick="pergunta4(1)">tematica de epoca</button>
-            <button onclick="pergunta4(2)">sem conexao com a realidade</button>
-            <button onclick="pergunta4(3)">situacoes cotidianas</button>
+        <div id="div_4" class="pergunta" style="display: none;">
+            <button class="prox" onclick="proxima(4)">Próxima</button>
+            <h3>Você prefere:</h3>
+            <button id="p4b1" onclick="pergunta4(1)">temática de época</button>
+            <button id="p4b2" onclick="pergunta4(2)">sem conexão com a realidade</button>
+            <button id="p4b3" onclick="pergunta4(3)">situações cotidianas</button>
             <br>
-            <button onclick="proxima(4)">Proxima</button>
+            
             </div>
 
-            <div id="div_5" style="display: none;">
-                Voce gosta de 
-                <button onclick="pergunta5(1)">1 temporada</button>
-                <button onclick="pergunta5(2)">ate 5 emporadas</button>
-                <button onclick="pergunta5(3)">acima de 8 temporadas</button>
+            <div id="div_5" class="pergunta" style="display: none;">
+                <button class="prox" onclick="ver()">Ver resultado</button>
+                <h3>Qual opção te descreve mais:</h3>
+                <button id="p5b1" onclick="pergunta5(1)">Acabar em 1 dia</button>
+                <button id="p5b2" onclick="pergunta5(2)">Assistir de pouquinho</button>
+                <button id="p5b3" onclick="pergunta5(3)">Maratonar</button>
                 <br>
-                <button onclick="ver()">Ver resultado</button>
+                
                 </div>
 
+            <div id="div_final" style="display: none;">
+                <h3>Com base nas suas respostas, acreditamos que você vai se encantar por essas séries:</h3>
+                <div id="div_series">
+                    <a href="./dashboard/friends.html">
+                        <div class="language" id="div_friends" style="display: none;">
+                            <img src="../assets/imgs/friends.png" alt="">
+                            <h2>Friends <span id="span_friends"></span></h2>
+                        </div>
+                    </a>
+                    <a href="./dashboard/modern-family.html">
+                        <div style="display: none;" class="language" id="div_mofa">
+                            <img src="../assets/imgs/modern-family.jpg" alt="">
+                            <h2>Modern Family <span id="span_mofa"></span></h2>
+                        </div>
+                    </a>
+                    <a href="./dashboard/one-day.html">
+                        <div style="display: none;" class="language" id="div_oneday">
+                            <img src="../assets/imgs/one-day-at-a-time.jpg" alt="">
+                            <h2>One Day at a Time <span id="span_oneday"></span></h2>
+                        </div>
+                    </a>
+                    <a href="./dashboard/pretty-smart.html">
+                        <div style="display: none;" class="language" id="div_prsm">
+                            <img src="../assets/imgs/pretty-smart.jpg" alt="">
+                            <h2>Pretty Smart <span id="span_prsm"></span></h2>
+                        </div>
+                    </a>
+                    <a href="./dashboard/tgp.html">
+                        <div style="display: none;" class="language" id="div_tgp">
+                            <img src="../assets/imgs/The-Good-Place.jpg" alt="">
+                            <h2>The Good Place <span id="span_tgp"></span></h2>
+                        </div>
+                    </a>
+                    <a href="./dashboard/black-mirror.html">
+                        <div style="display: none;" class="language" id="div_blackm">
+                            <img src="../assets/imgs/black-mirror.jpg" alt="">
+                            <h2>Black Mirror <span id="span_blackm"></span></h2>
+                        </div>
+                    </a>
+                    <a href="./dashboard/bridgerton.html">
+                        <div style="display: none;" class="language" id="div_bdgt">
+                            <img src="../assets/imgs/bridgerton.jpg" alt="">
+                            <h2>Bridgerton <span id="span_bdgt"></span></h2>
+                        </div>
+                    </a>
+                    <a href="./dashboard/murder.html">
+                        <div style="display: none;" class="language" id="div_htgawm">
+                            <img src="../assets/imgs/How-To-Get-Away-With-Murder.jpg" alt="">
+                            <h2>How to Get Away <span id="span_htgawm"></span></h2>
+                        </div>
+                    </a>
+                    <a href="./dashboard/wandavision.html">
+                        <div style="display: none;" class="language" id="div_wavi">
+                            <img src="../assets/imgs/WandaVision.jpg" alt="">
+                            <h2>WandaVision <span id="span_wavi"></span></h2>
+                        </div>
+                </div>
+                </div>
+            </div>
     <div id="msg"></div>
 </body>
 </html>
 
 <script>
-    var friends= 0
-    var mofa= 0
-    var oned= 0
-    var pretty= 0
-    var good= 0
-    var black= 0
-    var brid=0
-    var murder= 0
-    var wanda= 0
+    var friends= 0;
+    var mofa= 0;
+    var oned= 0;
+    var pretty= 0;
+    var good= 0;
+    var black= 0;
+    var brid=0;
+    var murder= 0;
+    var wanda= 0;
     function pergunta1(x) {
         if (x == 1) {
-            friends ++
-            mofa ++
-            oned ++
-            pretty ++
-            good ++
+            p1b1.style.background = '#7ed957';
+            p1b1.style.color = 'white';
+            friends ++;
+            mofa ++;
+            oned ++;
+            pretty ++;
+            good ++;
         } else if (x ==2) {
-            wanda ++
-            black ++
+            p1b2.style.background = '#7ed957';
+            p1b2.style.color = 'white';
+            wanda ++;
+            black ++;
         } else {
-            brid ++
-            murder ++
+            p1b3.style.background = '#7ed957';
+            p1b3.style.color = 'white';
+            brid ++;
+            murder ++;
         }
     }
 
     function pergunta2(x) {
         if (x == 1) {
-            friends ++
-            mofa ++
-            oned ++
-            pretty ++
-            good ++
+            p2b1.style.background = '#7ed957';
+            p2b1.style.color = 'white';
+            friends ++;
+            mofa ++;
+            oned ++;
+            pretty ++;
+            good ++;
         } else if (x ==2) {
-            murder ++
+            p2b2.style.background = '#7ed957';
+            p2b2.style.color = 'white';
+            murder ++;
             
         } else {
-            brid ++
-            black ++
-            wanda ++
+            p2b3.style.background = '#7ed957';
+            p2b3.style.color = 'white';
+            brid ++;
+            black ++;
+            wanda ++;
         }
     }
 
     function pergunta3(x) {
         if (x == 1) {
-            friends ++
-            mofa ++
-            oned ++
-            pretty ++
-            good ++
+            p3b1.style.background = '#7ed957';
+            p3b1.style.color = 'white';
+            mofa ++;
+            oned ++;
+            pretty ++;
         } else if (x ==2) {
-            murder ++
-            
+            p3b2.style.background = '#7ed957';
+            p3b2.style.color = 'white';
+            wanda ++;
+            friends ++;
         } else {
-            brid ++
-            black ++
-            wanda ++
+            p3b3.style.background = '#7ed957';
+            p3b3.style.color = 'white';
+            brid ++;
+            black ++;
+            good ++;
+            murder ++;
         }
     }
 
     function pergunta4(x) {
         if (x == 1) {
-            friends ++
-            mofa ++
-            oned ++
-            pretty ++
-            good ++
+            p4b1.style.background = '#7ed957';
+            p4b1.style.color = 'white';
+            brid ++;
         } else if (x ==2) {
-            murder ++
-            
+            p4b2.style.background = '#7ed957';
+            p4b2.style.color = 'white';
+            black ++;
+            wanda ++;
+            murder ++;
         } else {
-            brid ++
-            black ++
-            wanda ++
+            p4b3.style.background = '#7ed957';
+            p4b3.style.color = 'white';
+            friends ++;
+            mofa ++;
+            oned ++;
+            pretty ++;
+            good ++;
         }
     }
 
     function pergunta5(x) {
         if (x == 1) {
-            friends ++
-            mofa ++
-            oned ++
-            pretty ++
-            good ++
-        } else if (x ==2) {
-            murder ++
+            p5b1.style.background = '#7ed957';
+            p5b1.style.color = 'white';
+            brid ++;
+            wanda ++;
+            pretty ++;
             
+        } else if (x ==2) {
+            p5b2.style.background = '#7ed957';
+            p5b2.style.color = 'white';
+            murder ++;
+            good ++;
+            oned ++;
         } else {
-            brid ++
-            black ++
-            wanda ++
+            p5b3.style.background = '#7ed957';
+            p5b3.style.color = 'white';
+            black ++;
+            friends ++;
+            mofa ++;
         }
     }
 
     function proxima(x) {
         if (x ==1) {
-            div_1.style.display=`none`
-            div_2.style.display=`block`
+            div_1.style.display=`none`;
+            div_2.style.display=`block`;
         } else if (x == 2) {
-            div_2.style.display=`none`
-            div_3.style.display=`block`
+            div_2.style.display=`none`;
+            div_3.style.display=`block`;
         } else if (x == 3) {
-            div_3.style.display=`none`
-            div_4.style.display=`block`
+            div_3.style.display=`none`;
+            div_4.style.display=`block`;
         } else {
-            div_4.style.display=`none`
-            div_5.style.display=`block`
+            div_4.style.display=`none`;
+            div_5.style.display=`block`;
         }
 
 
+    }
+    var friends= 0;
+    var mofa= 0;
+    var oned= 0;
+    var pretty= 0;
+    var good= 0;
+    var black= 0;
+    var brid=0;
+    var murder= 0;
+    var wanda= 0;
+    function ver() {
+        div_5.style.display=`none`;
+        div_final.style.display='block';
+        if (friends > 3) {
+            div_friends.style.display='block';
+        } 
+         if (mofa > 3) {
+            div_mofa.style.display='block';
+        }  
+         if (oned > 3) {
+            div_oneday.style.display='block';
+        }  
+         if (pretty > 3) {
+            div_prsm.style.display='block';
+        }
+         if (good > 3) {
+            div_tgp.style.display='block';
+        }
+         if (black > 3) {
+            div_blackm.style.display='block';
+        }
+         if (brid > 3) {
+            div_bdgt.style.display='block';
+        }
+         if (murder > 3) {
+            div_htgawm.style.display='block';
+        }  
+        if (wanda > 3){
+            div_wavi.style.display='block'
+        }
     }
 
 </script>
