@@ -61,13 +61,14 @@
     /* background-image: url(../assets/imgs/Spain_Madrid.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
+    text-align: center;
 
 }
 
 .banner img {
-    margin-left: 350px;
+    /* margin-left: 300px; */
     margin-top: 180px;
-    width: 600px;
+    width: 800px;
 }
 
 .banner h3 {

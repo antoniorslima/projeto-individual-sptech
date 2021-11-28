@@ -91,10 +91,6 @@ body {
     justify-content: space-evenly;
 }
 
-.serie h2{
-    margin-top: 10px;
-}
-
 .serie iframe {
     width: 500px;
     height: 300px;
@@ -135,13 +131,18 @@ body {
 .sinopse {
     width: 400px;
     /* border-left: solid 2px #7ed957; */
-    margin: 50px 20px;
+    margin: 20px 20px;
 }
 
 .sinopse p {
-    margin: 10px 50px 20px 35px;
+    margin: 5px 50px 20px 35px;
     text-align: justify;
+    text-indent: 50px;
     
+}
+
+.descricao h2{
+margin-top: 20px;
 }
 
 
