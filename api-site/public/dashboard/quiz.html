@@ -6,9 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="stylesheet" href="../css/ingles.css">
+    <link rel="icon" href="../assets/imgs/logo a.svg">
 </head>
 <body>
-    <div id="div_1" class="pergunta">
+    <ul class="navbar">
+        <img src="../assets/imgs/logo branco.svg" class="logo">
+        <div class="titulo">
+            <img src="../assets/imgs/ingles.svg" alt="">
+            <h2>Inglês</h2>
+        </div>
+        <li><a href="../ingles.html"> Voltar </a></li>
+        <li><a href="../login.html"> Sair </a></li>
+    </ul>
+
+    <div id="div_inicial" class="pergunta">
+        <h3>O teste para descobrir quais séries combinam com você já vai começar, basta clicar em iniciar</h3>
+        <button onclick="iniciar()">Iniciar teste</button>
+    </div>
+    <div id="div_1" class="pergunta" style="display: none;">
 <button class="prox" onclick="proxima(1)">Próxima</button>
 <h3>Qual tipo de série favorito?</h3>
 <button id="p1b1" onclick="pergunta1(1)">Comédia</button>
@@ -131,6 +146,12 @@
     var brid=0;
     var murder= 0;
     var wanda= 0;
+
+function iniciar() {
+    div_inicial.style.display='none';
+    div_1.style.display='block';
+}
+
     function pergunta1(x) {
         if (x == 1) {
             p1b1.style.background = '#7ed957';
