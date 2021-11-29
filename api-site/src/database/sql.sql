@@ -16,8 +16,6 @@ values
 ('Carlos Jose','carlos@gmail.com','carlos123'),
 ('Paulo Silva','paulo@gmail.com','paulo123');
 
-select * from usuario;
-
 CREATE TABLE serie (
 	id INT PRIMARY KEY AUTO_INCREMENT,
     nomeSerie VARCHAR(60),
@@ -36,7 +34,6 @@ values
 ('How to Get Away', 'Netflix'),
 ('WandaVision', 'DisneyPlus');
 
-select * from serie;
 
 CREATE TABLE comentario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -59,10 +56,10 @@ values
 (1, 10, 'Me lembra os velhos tempos, nao canso de rever',3),
 (3, 9, 'Faz muitas críticas sociais fortíssimas, com enredos bem trabalhados e muita empatia.',3);
 
+select * from usuario;
+select * from serie;
 select * from comentario;
-
 select count(id) from comentario;
-
 select round(avg(nota),2) from comentario where fk_serie= 2;
 select s.plataforma as plataforma, round(avg(nota),2) AS media from serie s inner join comentario c on c.fk_serie= s.id where s.id= 2;
 select s.plataforma as plataforma, round(avg(nota),2) AS media from serie s inner join comentario c on c.fk_serie= s.id group by(s.id);
