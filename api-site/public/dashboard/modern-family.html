@@ -50,7 +50,7 @@
                     <p> O casal Phil e Claire deseja ter um relacionamento aberto com seus três filhos, mas com um adolescente que tenta amadurecerrápido demais, uma filha muito esperta para sua idade e um filho em crise, o desafio é bem grande. </p>
                          <p> Jay e a esposa criam o filho ao mesmo tempo que lidam com os problemas trazidos pela grande diferença de idade. Os parceiros Mitchell e Cameron enfrentam novos desafios após a adoção de uma criança do Vietnã.
                 </p>
-                <div id="div_estrela" style="background-color: green; width: 100px;"><img src="../assets/imgs/estrela.svg" alt="" width="30px"></div>
+                <div id="div_estrela" style="background-color: green; width: 150px;"></div>
             </div>
 
         </div>
@@ -66,9 +66,12 @@
                 var plataforma = json.plataforma;
                 span_media.innerHTML = media;
                 span_plat.innerHTML = plataforma;
-                if (Number(media) > 5) {
-            alert('sos');
-        } 
+                if (Number(media) > 9) {
+            div_estrela.innerHTML= `<img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">`;
+        } else if(Number(media) > 7) {
+            div_estrela.innerHTML= `<img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">`;
+        }
+
             }).catch(function(erro) {
                 console.log(erro);
             })
