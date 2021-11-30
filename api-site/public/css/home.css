@@ -81,9 +81,9 @@
 
 .sobre {
     border-top: solid white 10px;
-    background-color: #7ed957;
+    background-color: rgb(126, 217, 87);
     color: white;
-    height: 80vh;
+    height: 105vh;
     align-self: center;
     justify-self: center;
     text-align: center;
@@ -105,6 +105,8 @@
 .sobre li {
     list-style: inherit;
     list-style-type:circle;
+text-align: justify;
+margin-left: 550px;
 }
 
 .idiomas {

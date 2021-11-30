@@ -46,11 +46,9 @@
             <!-- <iframe width="100px" height="80px" src="https://www.youtube.com/embed/Ub_lfN2VMIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  -->
             <div class="sinopse">
                 <h4>Sinopse</h4>
-                <p>Com uma narração oculta, a série oferece uma perspectiva honesta e muitas vezes hilária do cotidiano de uma família. </p>
-                    <p> O casal Phil e Claire deseja ter um relacionamento aberto com seus três filhos, mas com um adolescente que tenta amadurecerrápido demais, uma filha muito esperta para sua idade e um filho em crise, o desafio é bem grande. </p>
-                         <p> Jay e a esposa criam o filho ao mesmo tempo que lidam com os problemas trazidos pela grande diferença de idade. As parceiras Mitchell e Cameron enfrentam novos desafios após a adoção de uma criança do Vietnã.
-                </p>
-                <button><a href="./quiz.html"> Fazer quiz </a></button>
+                <p>One Day at Time é uma série de TV norte-americana produzida originalmente pela Netflix. A história acompanha uma família cubano-americana que tenta levar a vida após o divórcio dos pais, enquanto ganha o apoio e a ajuda de Schneider, filho do dono do edifício que trabalha como síndico do prédio em que vivem.</p>
+                <p>Na nova versão do clássico da TV sobre uma família de imigrantes cubanos, a mãe recém-divorciada e a avó careta criam uma adolescente e um pré-adolescente. </p>
+                <div id="div_estrela"></div>
             </div>
 
         </div>
@@ -66,9 +64,21 @@
                 var plataforma = json.plataforma;
                 span_media.innerHTML = media;
                 span_plat.innerHTML = plataforma;
-                if (Number(media) > 5) {
-            alert('sos');
+                if (Number(media) > 9) {
+            div_estrela.innerHTML= `<img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">`;
         } 
+        else if(Number(media) > 7) {
+            div_estrela.innerHTML= `<img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">`;
+        } 
+        else if(Number(media) > 5) {
+            div_estrela.innerHTML= `<img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">`;
+        } 
+        else if(Number(media) > 3) {
+            div_estrela.innerHTML= `<img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">`;
+        }  
+        else if(Number(media) > 1) {
+            div_estrela.innerHTML= `<img src="../assets/imgs/estrela.svg" alt="" width="30px">`;
+        }
             }).catch(function(erro) {
                 console.log(erro);
             })

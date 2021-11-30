@@ -46,11 +46,9 @@
             <!-- <iframe width="100px" height="80px" src="https://www.youtube.com/embed/Ub_lfN2VMIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  -->
             <div class="sinopse">
                 <h4>Sinopse</h4>
-                <p>Com uma narração oculta, a série oferece uma perspectiva honesta e muitas vezes hilária do cotidiano de uma família. </p>
-                    <p> O casal Phil e Claire deseja ter um relacionamento aberto com seus três filhos, mas com um adolescente que tenta amadurecerrápido demais, uma filha muito esperta para sua idade e um filho em crise, o desafio é bem grande. </p>
-                         <p> Jay e a esposa criam o filho ao mesmo tempo que lidam com os problemas trazidos pela grande diferença de idade. As parceiras Mitchell e Cameron enfrentam novos desafios após a adoção de uma criança do Vietnã.
-                </p>
-                <button><a href="./quiz.html"> Fazer quiz </a></button>
+                <p>Seis jovens são unidos por laços familiares, românticos e, principalmente, de amizade, enquanto tentam vingar em Nova York. Rachel é a garota mimada que deixa o noivo no altar para viver com a amiga dos tempos de escola Monica, sistemática e apaixonada pela culinária.</p>
+                <p> Monica é irmã de Ross, um paleontólogo que é abandonado pela esposa, que descobriu ser lésbica. Do outro lado do corredor do apartamento de Monica e Rachel, moram Joey, um ator frustrado, e Chandler, de profissão misteriosa. A turma é completa pela exótica Phoebe.  </p>
+                <div id="div_estrela"></div>
             </div>
 
         </div>
@@ -66,9 +64,21 @@
                 var plataforma = json.plataforma;
                 span_media.innerHTML = media;
                 span_plat.innerHTML = plataforma;
-                if (Number(media) > 5) {
-            alert('sos');
+                if (Number(media) > 9) {
+            div_estrela.innerHTML= `<img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">`;
         } 
+        else if(Number(media) > 7) {
+            div_estrela.innerHTML= `<img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">`;
+        } 
+        else if(Number(media) > 5) {
+            div_estrela.innerHTML= `<img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">`;
+        } 
+        else if(Number(media) > 3) {
+            div_estrela.innerHTML= `<img src="../assets/imgs/estrela.svg" alt="" width="30px">  <img src="../assets/imgs/estrela.svg" alt="" width="30px">`;
+        }  
+        else if(Number(media) > 1) {
+            div_estrela.innerHTML= `<img src="../assets/imgs/estrela.svg" alt="" width="30px">`;
+        }
             }).catch(function(erro) {
                 console.log(erro);
             })

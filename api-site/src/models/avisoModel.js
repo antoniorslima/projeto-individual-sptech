@@ -17,7 +17,7 @@ FROM comentario c
     INNER JOIN usuario u
         ON c.fk_usuario = u.id
     INNER JOIN serie s
-        ON c.fk_serie = s.id;
+        ON c.fk_serie = s.id order by c.id desc;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

@@ -58,7 +58,7 @@ values
 
 select * from usuario;
 select * from serie;
-select * from comentario;
+select * from comentario order by id desc;
 select count(id) from comentario;
 select round(avg(nota),2) from comentario where fk_serie= 2;
 select s.plataforma as plataforma, round(avg(nota),2) AS media from serie s inner join comentario c on c.fk_serie= s.id where s.id= 2;
