@@ -18,6 +18,7 @@
             <img src="./assets/imgs/ingles.svg" alt="">
             <h2>Inglês</h2>
         </div>
+        <button id="btn_teste" onclick="teste()">Fazer teste</button>
         <li><a href="./primeira-tela.html"> Voltar </a></li>
         <li><a href="./login.html"> Sair </a></li>
     </ul>
@@ -45,7 +46,6 @@
             <button onclick="sorteio()">Ver sugestão</button>
             <button id="btn_comentarios" onclick="comentarios()">Ver comentários</button>
             <button id="btn_voltar" onclick="voltar()" style="display: none">Voltar</button>
-            <button id="btn_teste" onclick="teste()">Fazer teste</button>
             <div id="div_msg"></div>
         </div>
 
@@ -150,7 +150,7 @@
         }
         var sugestao = (Math.random() * 8).toFixed();
         btn_voltar.style.display = 'none';
-        btn_teste.style.display= 'block';
+        btn_teste.style.display= 'flex';
         btn_comentarios.style.display= 'block';
     }
 
